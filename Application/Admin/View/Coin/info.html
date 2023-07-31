@@ -1,0 +1,102 @@
+<include file="Public:header" />
+<div id="main-content">
+	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
+		<button class="close fixed" style="margin-top: 4px;">&times;</button>
+		<div class="alert-content">Warnings</div>
+	</div>
+	<div id="main" class="main">
+		<div class="main-title-h">
+			<span class="h1-title">serverWallet information</span>
+			<span class="h2-title">>><a href="{:U('Coin/index')}">Currency list</a></span>
+		</div>
+
+		<div class="tab-wrap">
+
+			<div class="tab-content">
+				<form id="form" action="" method="post" class="form-horizontal">
+					<div id="tab" class="tab-pane in tab">
+						<div class="form-item cf">
+							<table>
+								<tr class="controls">
+									<td class="item-label">Wallet name :</td>
+									<td></td>
+									<td class="item-note">{$data.coin|default="0"}</td>
+								</tr>
+								<tr class="controls">
+									<td class="item-label">Wallet version :</td>
+									<td></td>
+									<td class="item-note">{$data.c.walletversion|default="0"}</td>
+								</tr>
+								<tr class="controls">
+									<td class="item-label">Wallet transactions :</td>
+									<td></td>
+									<td class="item-note">{$data.c.txcount|default="0"}</td>
+								</tr>
+								
+								<tr class="controls">
+									<td class="item-label">Total block :</td>
+									<td></td>
+									<td class="item-note">{$data.a.headers|default="0"}</td>
+								</tr>
+								<tr class="controls">
+									<td class="item-label">Block has been loaded :</td>
+									<td></td>
+									<td class="item-note">{$data.a.blocks|default="0"}</td>
+								</tr>
+								<tr class="controls">
+									<td class="item-label">Loading progress :</td>
+									<td></td>
+									<td class="item-note"><eq name="data.a.blocks" value="$data['a']['headers']"> <font color="red">Data is loadedcomplete</font> <else /> Data is loaded:{$data['b']['verificationprogress']*100}%(plusUpload is complete before it can betransaction) </eq></td>
+								</tr>
+								<tr class="controls">
+									<td class="item-label">The total wallet :</td>
+									<td></td>
+									<td class="item-note">{$data['b']['balance']}</td>
+								</tr>
+								<tr class="controls">
+									<td class="item-label">The total station :</td>
+									<td></td>
+									<td class="item-note">{$data['num']}</td>
+								</tr>
+								
+								
+								<tr class="controls">
+									<td class="item-label">Current rates :</td>
+									<td></td>
+									<td class="item-note">{$data['b']['paytxfee']}</td>
+								</tr>
+
+
+								<volist name="data['b']" id="vo">
+
+									<tr class="controls">
+										<td class="item-label">{$key}:</td>
+										<td></td>
+										<td class="item-note">{$vo}</td>
+									</tr>
+
+								</volist>
+							</table>
+						</div>
+					</div>
+					<br>
+				</form>
+				<script type="text/javascript">
+					//submit Form
+					$('#submit').click(function(){
+						$('#form').submit();
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		//Highlight the main navigation
+		$('.config-box').addClass('current');
+		//Highlight side navigation
+		$('.config-coin').addClass('current');
+	});
+</script>
+<include file="Public:footer" />

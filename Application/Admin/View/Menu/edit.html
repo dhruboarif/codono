@@ -1,0 +1,71 @@
+<include file="Public:header" />
+
+<block name="body">
+    <div class="main-title-h">
+        <span class="h1-title">{:isset($info['id'])?'edit':'New'}Background Menu</span>
+    </div>
+
+    <form action="{:U()}" method="post" class="form-horizontal">
+        <div class="form-item">
+            <label class="item-label">title<span class="check-tips">(useinRearstationdisplayConfigurationtitle)</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">Sequence<span class="check-tips">(useinPacketdisplayOrder)</span></label>
+            <div class="controls">
+                <input type="text" class="text input-small" name="sort" value="{$info.sort|default=0}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">link<span class="check-tips">(UAnalytical functionURLOr the outer chain)</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="url" value="{$info.url|default=''}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">Previous menu<span class="check-tips">(belong toPrevious menu)</span></label>
+            <div class="controls">
+                <select name="pid">
+                    <volist name="Menus" id="menu">
+                        <option value="{$menu.id}">{$menu.title_show}</option>
+                    </volist>
+                </select>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">Packet<span class="check-tips">(useOn the leftPackettwolevelmenu)</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="group" value="{$info.group|default=''}">
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">Whether to hide<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="hide" value="1">Yes</label>
+                <label class="radio"><input type="radio" name="hide" value="0">no</label>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">onlyDeveloperVisible mode<span class="check-tips"></span></label>
+            <div class="controls">
+                <label class="radio"><input type="radio" name="is_dev" value="1">Yes</label>
+                <label class="radio"><input type="radio" name="is_dev" value="0">no</label>
+            </div>
+        </div>
+        <div class="form-item">
+            <label class="item-label">Explanation<span class="check-tips">(menudetailedExplanation)</span></label>
+            <div class="controls">
+                <input type="text" class="text input-large" name="tip" value="{$info.tip|default=''}">
+            </div>
+        </div>
+        <div class="form-item">
+            <input type="hidden" name="id" value="{$info.id|default=''}">
+            <button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">Submit</button>
+            <button class="btn btn-return" onclick="javascript:history.back(-1);return false;">Back</button>
+        </div>
+    </form>
+</block>
+
+<include file="Public:footer" />

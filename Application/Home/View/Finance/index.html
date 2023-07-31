@@ -1,0 +1,113 @@
+<include file="Public:header" />
+
+		<!-- Page content -->
+		<div class="page-container">
+
+			<!-- Main sidebar -->
+			<include file="Finance:left" />
+
+			<!-- Main content -->
+			<div class="panel panel-flat">
+			<div class="panel-heading">
+				<h1>
+					<span>
+						{:l('MY_PROPERTY')}					</span>
+					<span>
+												<a class="right" onclick="$('#hints').slideToggle();"><i class="fa fa-hand-o-right move fz_14 mr5"></i><span class="fz_12 move">{:l('VIEW_DESCRIPTION')}</span></a>
+											</span>
+				</h1>
+			</div>
+			<div class="panel-body">
+			<div id="hints" class="mytips" style="display:none;">
+				
+				<p>
+				
+				
+                <notempty name="prompt_text">
+                    {$prompt_text}
+                </notempty>
+				
+				</p>			
+				
+				</div>
+			<div class="pur_dy" style="height: inherit;">
+								<ul style="    height: 108px;">
+					<li class="pur_dy_li pur_dy_li2 ml25 ">
+						<a> <img src="__PUBLIC__/static/images/mall_car.jpg"> <br>{:l('AVAILABLE_FIAT')}
+							<em>${$usd['ky']|NumToStr}</em>
+						</a>
+					</li>
+					<li class="pur_dy_li pur_dy_li2">
+						<a> <img src="__PUBLIC__/static/images/mall_car1.jpg"> <br> {:l('FREEZE_FIAT')}
+							<em>${$usd['dj']|NumToStr}</em>
+						</a>
+					</li>
+										<li class="pur_dy_li pur_dy_li3">
+						<a> <img src="__PUBLIC__/static/images/mall_car2.jpg"> <br>{:l('ESTIMATED_TOTAL_ASSETS')}
+							<em>${$usd['zj']|NumToStr}</em>
+						</a>
+					</li>
+									</ul>
+
+							</div>
+			<div class="pur_shop_title">
+				<ul>
+					<li class="w120 w180">{:l('DIGITAL_ASSETS')}</li>
+					<li class="w100 ml50">{:l('AVAILABLE')}</li>
+					<li class="w100 ml130">{:l('FREEZE')}</li>
+					<li class="w120 ml130">{:l('TOTAL')}</li>
+					<li class="w120 ml130">{:l('CONVERT')}</li>
+					<li class="w120" style="margin-left: 25px">{:l('OPERATING')}</li>
+				</ul>
+			</div>
+			<ul class="coin_list" id="grid-finan">
+			
+			
+			<volist name="coinList" id="vo">
+				 <li>
+					<dl>
+						<dd class="w200" style="margin-left: 0;">
+							<div class="coin_pic mr20">
+								<img src="__UPLOAD__/coin/{$vo['img']}" alt="" width="40"/>
+							</div>
+							<div class="coin_name" style="width: 100px;">
+
+																<div>{$vo['title']}</div>
+								
+
+								<p class="orange">${$vo['jia']|NumToStr}</p>
+							</div>
+						</dt>
+						<dd class="">{$vo['xnb']|NumToStr}</dd>
+						<dd class="">{$vo['xnbd']|NumToStr}</dd>
+						<dd class="">{$vo['xnbz']|NumToStr}</dd>
+						<dd class="">{$vo['zhehe']|NumToStr}</dd>
+						<dd class="">
+					
+							<input type="button" value="{:l('TO_TRADE')}" class="btns" 
+                                   onclick="top.location='/trade/index/market/{:C('market_type')[$vo['name']]}'">
+						</dd>
+					</dl>
+				</li>
+				
+			 </volist>     	
+				
+                
+            </ul>
+			</div>
+		</div>
+
+
+		</div>
+		<!-- /page content -->
+
+
+	<script>
+	var hints = "0";
+	if(hints == 1){
+		$('#hints').show();
+	}
+	$('#finance_box').addClass('active');
+	$('.finan_index').addClass('active');
+</script>
+<include file="Public:footer" />

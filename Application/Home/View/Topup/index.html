@@ -1,0 +1,214 @@
+<include file="Public:header"/>
+<div class="autobox">
+
+	<!-- breadcrumb component -->
+<div class="breadcrumb-line breadcrumb-line-component content-group-lg">
+						<ul class="breadcrumb">
+							<li><a href="{:U('Home/index')}"><i class="icon-home2 position-left"></i> {:l('HOME')}</a></li>
+
+							<li class="active"><a href="{:U('Topup/index')}" class=""> {:l('PREPAID_RECHARGE')} </a></li>
+							
+						</ul>
+					</div>
+<!-- /breadcrumb component -->
+    <div class="assets_center clear po_re zin70">
+        <!--MENU_ON_THE_LEFT-->
+        <include file="Game:left"/>
+        <!--RIGHT_OF_THE_CONTENT-->
+        <div class="panel panel-flat">
+			<div class="panel-heading">
+            
+                <h1 class="panel-title">{:l('PREPAID_RECHARGE')}</h1>
+            </div>
+			<div class="panel-body">
+     
+            <div class="choosepaymethod">
+                <div class="choosebanks" style="margin-top: 20px;">
+				<div class="col-sm-12">
+                    <div class="methodway clearfix col-sm-4">
+				<div class="weituo_bizhong form-group">
+                <div class="bizhong_select">
+                    <div class="bz_btn">
+                        <img src="__PUBLIC__/Home/images/coin_usd.png" alt="" style="width: 22px; float: left; margin-top: 7px; margin-right: 5px;"/>
+                        <span style="float: left; padding-top: 9px;"> {:l('USD')}</span>
+                    </div>
+                </div>
+                <div class="bizhong_type" style="width: 200px;">
+                    <span>{:l('AVAILABLE')}<em class="coin-name"></em>:<font class="coin-balance">{$user_coin['usd']|Num}</font></span>
+                </div>
+            </div>
+                        <div class="form-group">
+                            <label >{:l('RECHARGE_MOBILE')}</label>
+                                <input type="text" class="form-control" id="topup_cellphone" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>{:l('RECHARGE_AMOUNT')}</label>
+                            
+                                <select name="type" id="topup_num" class="form-control">
+                                    <option value="">--{:l('SELECT_THE_RECHARGE_AMOUNT')}--</option>
+                                    <volist name="topup_num" id="vo">
+                                        <option value="{$key}">{$vo}</option>
+                                    </volist>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label>{:l('PAYMENT_METHOD')}</label>
+                            
+                                <select name="type" id="topup_type" class="form-control">
+                                    <option value="">--{:l('CHOOSE_THE_PAYMENT_METHOD')}--</option>
+                                    <volist name="topup_type" id="vo">
+                                        <option value="{$key}">{$vo[0]}</option>
+                                    </volist>
+                                </select>
+                                <volist name="topup_type" id="vo">
+                                    <span class="topup_type_{$key}  topup_type " style="display: none;color:#e55600; " id="topup_type_{$key}">1 {$vo[0]} {:l('EQUAL')}  {$vo[1]} {:l('USD')}</span>
+                                </volist>
+                            
+                        </div>
+                        <div class="form-group ">
+                            <label>{:l('TRANSACTION_PASSWORD')}</label>
+                            
+                                <input type="password" class="form-control" id="paypassword" name="paypassword" autocomplete="off">
+                                <a href="{:U('Login/findpaypwd')}" class="reg_floatr">{:l('FORGET_PASSWORD')}?</a>
+                        </div>
+                        <div class="form-group">
+                            <label>&nbsp;</label>
+                            
+                                <input type="button" class="btn btn-sm btn-info" id="" onclick="Update()" value="{:l('SUBMIT')}" title="{:l('SUBMIT')}">
+                        </div>
+                    </div>
+                </div>
+				</div>
+				<br/><hr/>
+                <div class="f_body">
+                    <table class="table table-condensed table-striped" id="investLog_content">
+                        <thead>
+                        <tr>
+                            <th>{:l('RECHARGE_TIME')}</th>
+                            <th>{:l('PREPAID_CELL_PHONE')}</th>
+                            <th>{:l('RECHARGE_AMOUNT')}</th>
+                            <th>{:l('PAYMENT_METHOD')}</th>
+                            <th>{:l('Payement Amount')}</th>
+                            <th>{:l('PROCESSING_TIME')}</th>
+                            <th>{:l('STATUS')}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="list" id="vo">
+                            <tr>
+                                <td>{$vo['addtime']|addtime}</td>
+                                <td>{$vo['cellphone']}</td>
+                                <td>{$vo['num']|Num}</td>
+                                <td>{$vo['type']}</td>
+                                <td>{$vo['mum']|Num}</td>
+                                <td>
+                                    {$vo.endtime|addtime}
+                                </td>
+                                <td>
+                                    <eq name="vo['status']" value="0">{:l('PROCESSING')}</eq>
+                                    <eq name="vo['status']" value="1">{:l('IT_HAS_BEEN_CREDITED_INTO_ACCOUNT')}</eq>
+                                    <eq name="vo['status']" value="2">{:l('REVOKED')}</eq>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="pages">{$page}</div>
+                </div>
+            </div>
+        </div>
+		</div>
+    </div>
+</div>
+<br>
+<br>
+<script>
+    $("#topup_type").change(function () {
+        var topup_type = $("#topup_type option:selected").val();
+        $(".topup_type").hide();
+        $("#topup_type_" + topup_type).show();
+    });
+
+    function Update() {
+        var cellphone = $("#topup_cellphone").val();
+        var num = $('#topup_num option:selected').val();
+        var type = $('#topup_type option:selected').val();
+        var paypassword = $("#paypassword").val();
+
+        if (cellphone == "" || cellphone == null) {
+            layer.tips('Enter Mobile', '#topup_cellphone', {
+                tips: 3
+            });
+            return false;
+        }
+        if (num == "" || num == null) {
+            layer.tips('Enter Recharge Amount', '#topup_num', {
+                tips: 3
+            });
+            return false;
+        }
+        if (type == "" || type == null) {
+            layer.tips('Choose Payment Method', '#topup_type', {
+                tips: 3
+            });
+            return false;
+        }
+
+        if (paypassword == "" || paypassword == null) {
+            layer.tips('Provide Trans Password', '#paypassword', {
+                tips: 3
+            });
+            return false;
+        }
+
+        //INFORMATION
+        layer.alert(
+                'Mobile Recharge :' + cellphone + '<br>' +
+                'Recharge Amount :' + num + '<br>' +
+                'Recharge method :' + type + '<br><br>' +
+                'Are you sure to recharge?', {
+                    time: 0 //DO_NOT_AUTOMATICALLY_SHUT_DOWN
+                    ,
+                    btn: [
+                        'Confirm',
+                        'Cancel'
+                    ]
+                    ,
+                    title: 'Order details'
+                    ,
+                    yes: function () {
+
+
+                        $.post("{:U('Topup/index')}", {
+                            cellphone: cellphone,
+                            num: num,
+                            type: type,
+                            paypassword: paypassword,
+                        }, function (data) {
+                            if (data.status == 1) {
+                                layer.msg(data.info, {
+                                    icon: 1
+                                });
+                                window.location = "{:U('Topup/index')}";
+                            } else {
+                                layer.msg(data.info, {
+                                    icon: 2
+                                });
+                                if (data.url) {
+                                    window.location = data.url;
+                                }
+                            }
+                        }, "json");
+
+
+                    }
+                });
+    }
+</script>
+<script>
+    //Highlight the top menu
+    $('#game_box').addClass('active');
+    $('#game_topup').addClass('active');
+    $('#game_topup i').attr('class', 'coin_menu_op_8');
+</script>
+<include file="Public:footer"/>

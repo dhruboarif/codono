@@ -1,0 +1,64 @@
+<include file="Public:header" />
+<div class="container-fluid">
+	<div class="page-container">
+	<include file="Invest:smallmenu" />
+		<div class="panel panel-flat">
+		<div class="panel-heading">
+						<h5 class="panel-title">Dice Roll History</h5>
+
+	     </div>
+		<div class="panel-body">
+								<div class="col-sm-8"><small >
+							Your Dicerolls Histroy</small>
+</div><div class="col-sm-4 border-left"><include file="Invest:dicegame" /></div>
+</div>
+		<table class="table datatable-sorting">
+						<thead>
+							<tr>
+								<th>Coin</th>
+								<th>Amount</th>
+								<th>Call</th>
+								<th>Roll</th>
+								<th>Time</th>
+								<th>WinAmount</th>
+								<th>Result</th>
+							</tr>
+						</thead>
+						<tbody>
+						<notempty name="list">	
+						<volist name="list" id="vo">					
+						<tr>
+								
+								<td>{$vo.coinname}</td>
+								<td>{$vo.amount}</td>
+								<td>{$vo.call}</td>
+								<td>{$vo.number}</td>
+								<td>{$vo.addtime|date="Y-m-d",###}</td>
+								<td>{$vo.winamount}</td>
+								<td>
+								<switch name="vo.result">
+									<case value="1"><span class="label label-success">Won</span></case>
+									<case value="2"><span class="label label-danger">Lost</span></case>
+									<default />NA
+								</switch>
+								</span></td>
+							</tr>
+					</volist>	
+					<else/>
+						<p class="text-center font_gray font_16">
+						  <php>if (!userid()){</php>
+							<button onclick="javascript:loginpop()" class="btn btn-info">Login to view your Rolls History</button>
+						<php>}else{</php>
+							No Rolls so far, Go Ahead and try now !
+						<php>}</php>
+						</p>
+					</notempty>		
+							
+						</tbody>
+					</table>
+			<div class="pages"> {$page}</div>
+		</div>
+	</div>
+<include file="Invest:include" />
+</div>
+<include file="Public:footer" />

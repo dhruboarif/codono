@@ -1,0 +1,146 @@
+<include file="Public:header"/>
+<div id="main-content">
+	<div id="top-alert" class="fixed alert alert-error" style="display: none;">
+		<button class="close fixed" style="margin-top: 4px;">&times;</button>
+		<div class="alert-content">Warnings</div>
+	</div>
+	<div id="main" class="main">
+		<div class="main-title-h">
+			<span class="h1-title">Trades</span>
+		</div>
+		<div class="panel panel-flat">
+		<span style="color:#000">Total {$codono_count} Records : Amount :{:L('SITE_CURRENCY')}{$codono_getSum|default="0"}</span>
+		</div>
+		<div class="cf">
+			<div class="fl"></div>
+			<div class="search-form fr cf">
+				<div class="sleft">
+					<form name="formSearch" id="formSearch" method="get" name="form1">
+						<select style="width: 160px; float: left; margin-right: 10px;" name="market" class="form-control">
+							<option value=""
+							<empty name="Think.get.market">selected</empty>
+							>Market</option>
+							<volist name="C['market']" id="vo">
+								<option value="{$vo['name']}"
+								<eq name="vo['name']" value="$Think.get.market">selected</eq>
+								>{$vo['title']}</option>
+							</volist>
+						</select>
+						<select style="width: 160px; float: left; margin-right: 10px;" name="status" class="form-control">
+							<option value=""
+							<empty name="Think.get.status">selected</empty>
+							>All states</option>
+                            <option value="0" <eq name="Think.get.status" value="0">selected</eq>>In Transaction</option>
+							<option value="1" <eq name="Think.get.status" value="1">selected</eq>>Completed</option>
+							<option value="2" <eq name="Think.get.status" value="2">selected</eq>>Revoked</option>
+						</select>
+						
+						
+						
+						<select style="width: 160px; float: left; margin-right: 10px;" name="type" class="form-control">
+							<option value=""
+							<empty name="Think.get.type">selected</empty>
+							>Transaction Type</option>
+							<option value="1" <eq name="Think.get.type" value="1">selected</eq>>Buy</option>
+							<option value="2" <eq name="Think.get.type" value="2">selected</eq>>Sell</option>
+						</select>
+						
+						
+						
+						
+						<select style=" width: 160px; float: left; margin-right: 10px;" name="field" class="form-control">
+							<option value="username"
+							<eq name="Think.get.field" value="username">selected</eq>
+							>Username</option>
+						</select>
+						<input type="text" name="name" class="search-input form-control  " value="{$Think.get.name}" placeholder="Enter text to search" style="">
+						<a class="sch-btn" href="javascript:;" id="search"> <i class="btn-search"></i> </a>
+					</form>
+					<script>
+						//Search function
+						$(function () {
+							$('#search').click(function () {
+								$('#formSearch').submit();
+							});
+						});
+						//Enter search
+						$(".search-input").keyup(function (e) {
+							if (e.keyCode === 13) {
+								$("#search").click();
+								return false;
+							}
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+	
+		<div class="data-table table-striped">
+			<table class="">
+				<thead>
+				
+				<tr>
+					<th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+					<th class="">ID</th>
+					<th class="">Username</th>
+					<th class="">market</th>
+					<th class="">unit price</th>
+					<th class="">Quantity</th>
+					<th class="">Deal done</th>
+					<th class="">Total</th>
+					<th class="">Types</th>
+					<th class="">Time</th>
+					<th class="">Status</th>
+					<th class="">Option</th>
+				</tr>
+				</thead>
+				<tbody>
+				<notempty name="list">
+					<volist name="list" id="vo">
+						<tr>
+							<td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}"/></td>
+							<td>{$vo.id}</td>
+							<td>{$vo['username']}</td>
+							<td>{$vo['market']}</td>
+							<td>{$vo['price']|Num}</td>
+							<td>{$vo['num']|Num}</td>
+							<td>{$vo['deal']|Num}</td>
+							<td>{$vo['mum']|Num}</td>
+							<td>
+								<eq name="vo.type" value="1">
+									Buy
+									<else/>
+									Sell
+								</eq>
+							</td>
+							<td>{$vo.addtime|addtime}</td>
+							<td>
+								<eq name="vo.status" value="0">in transaction</eq>
+								<eq name="vo.status" value="1">Deal done</eq>
+								<eq name="vo.status" value="2">Revoked</eq>
+							</td>
+							<td>
+								<eq name="vo.status" value="0">
+									<a href="{:U('Trade/reject?id='.$vo['id'])}" class="ajax-get btn btn-primary btn-xs">Undo </a>
+								</eq>
+							</td>
+						</tr>
+					</volist>
+					<else/>
+					<td colspan="12" class="text-center">No contents!</td>
+				</notempty>
+				</tbody>
+			</table>
+			<div class="page">
+				<div>{$page}</div>
+			</div>
+		</div>
+	</div>
+</div>
+<include file="Public:footer"/>
+<block name="script">
+	<script type="text/javascript" charset="utf-8">
+		//Highlight navigation
+		highlight_subnav("{:U('Trade/index')}");
+	</script>
+</block>

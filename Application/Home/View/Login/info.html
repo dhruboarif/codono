@@ -1,0 +1,37 @@
+<include file="Public:header" />
+<php> 
+$reg_class="";
+$fund_class="";
+$kyc_class="move";
+$success_class="";
+</php>
+<!-- breadcrumb component -->
+<div class="breadcrumb-line breadcrumb-line-component content-group-lg">
+						<ul class="breadcrumb">
+							<li><a href="/"><i class="icon-home2 position-left"></i> {:l('HOME')}</a></li>
+
+							<li class="active"><a href="#" class=""> {:l('REGISTER_ACCOUNT')} </a></li>
+							
+						</ul>
+					</div>
+<!-- /breadcrumb component -->
+
+<div class="autobox">
+	<include file="Login:progress" />
+	<div class="panel panel-flat">
+		<div class="panel-heading">
+			<div class="panel-title"><i class="fa fa-check mr5 fz_40"></i>{:l('CONGRATULATIONS_YOU_HAVE_SUCCE')}</div>
+			<div class="panel-body">
+				<table class="table table-striped">
+					<tr><th>{:l('PHONE_NUMBER')}</th><td>{$user.cellphone}</td></tr>
+					<tr><th>{:l('TYPE_OF_CERTIFICATE')}</th><td>{:l('ID_CARD')}</td></tr>
+					<tr><th>{:l('ACTUAL_NAME')}</th><td>{$user.truename}</td></tr>
+					<tr><th>{:l('ID_NUMBER')}</th><td>{$user.idcard}</td></tr>
+					<tr><th><a href="/trade/index" class="btn btn-xs btn-info">{:l('START_TRADING')}</a></th><td><a href="{:U('Finance/mycz')}" class="btn btn-xs btn-warning">{:l('USD_RECHARGE')}</a></td></tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<include file="Public:footer" />

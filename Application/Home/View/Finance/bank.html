@@ -1,0 +1,396 @@
+<include file="Public:header" />
+	
+	
+	
+	
+<script type="text/javascript" src="__PUBLIC__/static/js/cityselect.js"></script>
+<style>
+	.ydt-bank {position: relative;padding-top: 20px;color: #7b808c;
+		line-height: 1;font: 14px/1.5 "Roboto", sans-serif;}
+	.yb-list-window {position:relative;z-index:2;width: 960px;margin: 0 auto;overflow: hidden;}
+	.yb-list-wapper {float: left;}
+	.yb-add {width: 225px; height: 148px;background-position: -10px -355px;float: left;margin-left: 10px;padding-top: 50px;cursor: pointer;background-image: url('__PUBLIC__/static/images/index_sprites_24.png');background-repeat: no-repeat;}
+	.yb-ico-add {width:16px;height:16px;margin:0 auto;background-position: -100px -10px;background-image: url('__PUBLIC__/static/images/index_sprites_24.png');background-repeat: no-repeat;}
+	.yb-txt { text-align: center;margin-top: 10px;}
+	.yb-item {position:relative;float: left;height: 174px;line-height: 1;}
+	.yb-info {width: 225px; height: 147px;padding-top: 10px;margin-left:13px;background-position: -10px -200px;cursor: pointer;background-image: url('__PUBLIC__/static/images/index_sprites_24.png');background-repeat: no-repeat;}
+	.yb-item .yb-name {padding-left: 4px;}
+	.bank-cmb{display: inline-block;text-indent: 1em; position: relative;  height: 33px;  width: 141px;  overflow: hidden;  line-height:37px;  font-weight: bold;vertical-align: top;}
+	.yb-type{display: inline-block;float: right;margin-top: 10px;white-space: nowrap;overflow: hidden;margin-right:13px;}
+	.yb-num{color: #3a3d42;  font-size: 20px;  width: 194px;  margin: 0 auto;  padding: 18px 0 14px;  white-space: nowrap;  overflow: hidden;}
+	.yb-links {display: block;width: 200px;margin: 0 auto;padding-top: 25px;}
+	.yb-link {float: left; line-height: 20px;  }
+	.yb-link a{color: #00b1ee;text-decoration: none;font-size:10px}
+	.yb-split {  width: 1px;  height: 13px;  float: left;  background-color: #d1d1d1;  margin: 4px 11px 0;overflow: hidden;}
+	.yb-link {float: left;line-height: 20px;}
+	.hide {display: none;}
+	.yb-ico{}
+</style>
+	
+
+
+		<!-- Page content -->
+		<div class="page-container">	
+	
+<include file="Finance:left" />
+
+		<!-- Main content -->
+<div class="panel panel-flat">
+		
+			<div class="panel-heading">
+				<h1>
+					<span>
+						{:l('WITHDRAW_ADDRESS')}					</span>
+					 <span>
+                        <a href="{:U('Finance/mytx')}"  class="step fz_12 ml50 pd6 ">{:l('ACCOUNT_WITHDRAWALS')}</a>
+						     <a href="{:U('Finance/outlog')}" class="step fz_12 ml20 pd6 ">{:l('WITHDRAWALS_RECORD')}</a>
+                        <a href="{:U('Finance/bank')}"  class="step fz_12 ml20 pd6 active">{:l('WITHDRAW_ADDRESS_MANAGEMENT')}</a>
+                    </span>
+					<span>
+												<a class="right" onclick="$('#hints').slideToggle();"><i class="fa fa-hand-o-right move fz_14 mr5"></i><span class="fz_12 move">{:l('VIEW_DESCRIPTION')}</span></a>
+											</span>
+				</h1>
+			
+			<div id="hints" class="mytips" style="display:none;">
+
+				<p> <notempty name="prompt_text">
+                    {$prompt_text}
+                </notempty></p>			
+			</div>
+			</div>
+<div class="tag-list-content assets_content bg_w">
+			<div class="ydt-bank">
+				<div class="yb-list-window">
+					<div class="yb-list-wapper">
+						<div id="bank_wrap" data-marginleft="979" data-on-cls="current" data-page-num="4" class="yb-list">
+							<div class="yb-add" onclick="showA()" >
+								<div class="yb-ico-add" onclick="showA()"></div>
+								<div class="yb-txt" onclick="showA()">{:l('ADDING_CARD')}</div>
+							</div>
+							<div class="yb-add" onclick="showCrypto()" >
+								<div class="yb-ico-add" onclick="showCrypto()"></div>
+								<div class="yb-txt" onclick="showCrypto()">Add Crypto Address<br/><small>USDT/GUSD/WUSD</small></div>
+							</div>
+							
+							
+			<volist name="UserBank" id="vo">				
+							
+			<div class="yb-item  js-bank-item js-bank-index-1 current" >
+								<div class="yb-info">
+									<div class="yb-name clearfix">
+										<div title="" class="yb-ico bank-cmb">{$vo.name}</div>
+										<div class="yb-type">{$vo.bank}</div>
+									</div>
+									<div class="yb-num ">
+										{$vo.bankcard}								</div>
+									<div class="yb-links clearfix">
+										<div class="js-bank-opt">
+                <span id="cur_bank_opt">
+                <div class="yb-link"><a href="{:U('Finance/mycz')}" class="js-opt @BANKCARD.FUN_C@" data-fun="C"><span>{:l('RECHARGE')}</span></a></div>
+                <span class="yb-split"></span>
+                <div class="yb-link"><a href="{:U('Finance/mytx')}" class="js-opt @BANKCARD.FUN_Pay@" data-fun="Pay"><span>{:l('WITHDRAW')}</span></a></div>
+            </span>
+											<span class="yb-split"></span>
+											<div class="yb-link">
+												<span class="hide" id="cur_status" data-open="{:l('TURNED_ON')}" data-close="{:l('CLOSED')}" data-active="{:l('INACTIVATED')}">{:l('TURNED_ON')}</span>
+												<a href="javascript:void(0)" class="selected cancel"  data="{$vo.id}" onclick="bank_del(this)"><span>{:l('UNBUNDLING')}</span></a>
+												<a href="#none" class="hide cancel" id="cur_unlock" onclick="bank_del(this)" data="{$vo.id}"><span>{:l('UNBUNDLING')}</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="yb-ico-up"></div>
+							</div>
+							
+				</volist>			
+							
+							
+						</div>
+						</div>
+					</div>
+				</div>
+				<div class="yb-arrows">
+					<div id="bank_pre_btn" class="yb-ico-left i-hide"></div>
+					<div id="bank_next_btn" class="yb-ico-right i-hide"></div>
+				</div>
+			
+		</div>
+	</div>
+
+<div class="all_mask_loginbox" id="step1" style="display: none;">
+	<div class="login_title pl20">{:l('ADD_A_WITHDRAWAL_ADDRESS')}</div>
+	<form id="form-login1" class="mask_wrap login-fb">
+		<div class="login_text zin90">
+			<div class="mask_wrap_title">{:l('NOTE_NAME')}</div>
+			<input id="bank_name" class="texts" type="text">
+		</div>
+		<div class="login_text zin80" style="display:none;">
+			<div class="mask_wrap_title">{:l('CURRENCY_NAME')}</div>
+			<select name="bank" id="bank_coinname" class="texts">
+				<option value="" selected="selected">--{:l('CHOOSE_A_CURRENCY')}--</option>
+								<option value="usd" selected>{:l('USD')}</option>
+				 </select>
+		</div>
+		<div class="login_text zin80">
+			<div class="mask_wrap_title">{:l('BANK')}</div>
+			<select name="bank" id="bank_bank" class="texts">
+				<option value="0">--{:l('CHOOSE_BANK')}--</option>
+				
+				   <volist name="UserBankType" id="vo">
+				<eq name="vo['type']" value="bank">				
+				<option value="{$vo['title']}">{$vo['title']}</option>
+				</eq>				  
+				  </volist>
+				  
+				 </select>
+		</div>
+		<div class="login_text zin80">
+			<div class="mask_wrap_title">{:l('ACCOUNT_PROVINCES')}</div>
+			<span class="controls" id="city_1">
+				<select class="prov texts" id="bank_prov" name="prov" style="width: 98px;"></select>
+				<input class="city texts" id="bank_city" name="city" style="width: 98px;"></select>
+            </span>
+		</div>
+		<div class="login_text zin80">
+			<div class="mask_wrap_title">{:l('BRANCH_ACCOUNT')}</div>
+			<input id="bank_bankaddr" class="texts" type="text">
+		</div>
+		<div class="login_text zin80">
+			<div class="mask_wrap_title">{:l('ACCOUNT_NAME')}</div>
+			<input id="bank_username" class="texts" type="text" value="{$truename}" disabled=true>
+		</div>
+		<div class="login_text zin80">
+			<div class="mask_wrap_title">{:l('BANK_CARD_NUMBER')}</div>
+			<input id="bank_bankcard" class="texts" type="text">
+		</div>
+		<div class="login_text zin80">
+			<div class="mask_wrap_title">{:l('TRANSACTION_PASSWORD')}</div>
+			<input id="bank_paypassword" class="texts" type="password"><a href="{:U('Login/findpwd/paypassword')}" class="move ml5">{:l('FORGET')}?</a>
+		</div>
+		<div class="login_button">
+			<input type="button" class="btns2" value="{:l('ADD_IT_NOW')}" onclick="bank_up();">
+		</div>
+	</form>
+	<div class="mask_wrap_close " onclick="showB()"><i class="fa fa-close fa-2x move"></i></div>
+</div>
+<div class="all_mask_loginbox" id="stepCrypto1" style="display: none;">
+	<div class="login_title pl20">Crytpo Withdrawal Address</div>
+	<form id="form-login2" class="mask_wrap login-fb">
+		<div class="login_text zin90">
+			<div class="mask_wrap_title">Save as</div>
+			<input id="crypto_name" class="texts" type="text">
+		</div>
+		<div class="login_text zin80" style="display:none;">
+			<div class="mask_wrap_title">{:l('CURRENCY_NAME')}</div>
+			<select name="bank" id="crypto_coinname" class="texts">
+				<option value="" selected="selected">--{:l('CHOOSE_A_CURRENCY')}--</option>
+								<option value="usd" selected>{:l('USD')}</option>
+				 </select>
+		</div>
+		<div class="login_text zin80">
+			<div class="mask_wrap_title">Crypto</div>
+			<select name="bank" id="crypto_bank" class="texts">
+				<option value="0">--Choose Method--</option>
+				   <volist name="UserBankType" id="vo">
+				   
+				   <eq name="vo['type']" value="crypto">
+				   <option value="{$vo['title']}">{$vo['title']}</option>
+				   </eq>
+				   </volist>
+				 </select>
+		</div>
+	
+		<div class="login_text zin80">
+			<div class="mask_wrap_title">Address</div>
+			<input id="crypto_bankcard" class="texts" type="text">
+		</div>
+		<div class="login_text zin80">
+			<div class="mask_wrap_title">{:l('TRANSACTION_PASSWORD')}</div>
+			<input id="crypto_paypassword" class="texts" type="password"><a href="{:U('Login/findpwd/paypassword')}" class="move ml5">{:l('FORGET')}?</a>
+		</div>
+		<div class="login_button">
+			<input type="button" class="btns2" value="{:l('ADD_IT_NOW')}" onclick="crypto_up();">
+		</div>
+	</form>
+	<div class="mask_wrap_close " onclick="showB()"><i class="fa fa-close fa-2x move"></i></div>
+</div>
+<div id="step2" class="all_mask" style="height: 0px;display: none;"></div>
+<script>
+	$(function () {
+		var height = $(document).height();
+		if (height < 1000) {
+			height = 1000;
+		}
+		$('#step2').height(height);
+		$("#city_1").citySelect({nodata: "none", required: false});
+	});
+	function showA() {
+		$("#step1").show();
+		$("#step2").show();
+	}
+	function showCrypto() {
+		$("#stepCrypto1").show();
+		$("#step2").show();
+	}
+	function showB() {
+		$("#step1").hide();
+		$("#stepCrypto1").hide();
+		$("#step2").hide();
+	}
+	function crypto_up(){
+		var name        = $('#crypto_name').val();
+		var bank        = $('#crypto_bank option:selected').val();
+		var bankcard    = $('#crypto_bankcard').val();
+		
+		var bank_coinname    = $('#crypto_coinname option:selected').val();
+		var paypassword = $('#crypto_paypassword').val();
+		
+		if (name == "" || name == null) {
+	console.log('name')	;
+		layer.tips("{:l('ENTER_A_NAME_REMARKS')}", '#crypto_name', {tips: 2});
+			return false;
+		}
+		if (bank_coinname == "" || bank_coinname == null) {
+		console.log('bank_coinname')	;
+			layer.tips("{:l('PLEASE_SELECT_CURRENCY')}", '#crypto_coinname', {tips: 2});
+			return false;
+		}
+
+		if (bankcard == "" || bankcard == null) {
+		console.log('bankcard')	;
+			layer.tips("Please enter address", '#crypto_bankcard', {tips: 2});
+			return false;
+		}
+		
+		if(bankcard.length < 5 || bankcard.length > 64){
+		console.log('length'+bankcard.length)	;
+			layer.tips("Please check address correct length", '#crypto_bankcard', {tips: 2});
+			return false;
+		}
+		
+		if (paypassword == "" || paypassword == null) {
+		console.log('paypassword'+paypassword)	;		
+		layer.tips("{:l('PLEASE_ENTER_TRANSACTION_PASSW')}", '#crypto_paypassword', {tips: 2});
+			return false;
+		}
+		console.log('Upbank nw')	;		
+		$.post("{:U('Finance/upbank')}", {
+			name: name,
+			bank: bank,
+			bankprov: 'NA',
+			bank_coinname: bank_coinname,
+			bankcity: 'NA',
+			bankaddr: 'NA',
+			bankcard: bankcard,
+			paypassword: paypassword
+		}, function (data) {
+			if (data.status == 1) {
+				layer.msg(data.info, {icon: 1});
+				location.reload();
+			} else {
+				layer.msg(data.info, {icon: 2});
+				if (data.url) {
+					window.location = data.url;
+				}
+			}
+		}, "json");
+	}
+	function bank_up() {
+		var name        = $('#bank_name').val();
+		var bank        = $('#bank_bank option:selected').val();
+		var bankprov    = $('#bank_prov option:selected').val();
+		var bankcity    = $('#bank_city').val();
+		var bank_coinname    = $('#bank_coinname option:selected').val();
+		var bankaddr    = $('#bank_bankaddr').val();
+		var bankcard    = $('#bank_bankcard').val();
+		var paypassword = $('#bank_paypassword').val();
+		if (name == "" || name == null) {
+			layer.tips("{:l('ENTER_A_NAME_REMARKS')}", '#bank_name', {tips: 2});
+			return false;
+		}
+		if (bank_coinname == "" || bank_coinname == null) {
+			layer.tips("{:l('PLEASE_SELECT_CURRENCY')}", '#bank_coinname', {tips: 2});
+			return false;
+		}
+		if (bankaddr == "" || bankaddr == null) {
+			layer.tips("{:l('ENTER_ACCOUNT_BRANCH')}", '#bank_bankaddr', {tips: 2});
+			return false;
+		}
+		if (bankcard == "" || bankcard == null) {
+			layer.tips("{:l('PLEASE_ENTER_THE_BANK_ACCOUNT_')}", '#bank_bankcard', {tips: 2});
+			return false;
+		}
+		
+		if(bankcard.length < 5 || bankcard.length > 30){
+			layer.tips("{:l('PLEASE_ENTER_THE_CORRECT_BANK_')}", '#bank_bankcard', {tips: 2});
+			return false;
+		}
+		
+		
+		
+		
+		if (paypassword == "" || paypassword == null) {
+			layer.tips("{:l('PLEASE_ENTER_TRANSACTION_PASSW')}", '#bank_paypassword', {tips: 2});
+			return false;
+		}
+		$.post("{:U('Finance/upbank')}", {
+			name: name,
+			bank: bank,
+			bankprov: bankprov,
+			bank_coinname: bank_coinname,
+			bankcity: bankcity,
+			bankaddr: bankaddr,
+			bankcard: bankcard,
+			paypassword: paypassword
+		}, function (data) {
+			if (data.status == 1) {
+				layer.msg(data.info, {icon: 1});
+				location.reload();
+			} else {
+				layer.msg(data.info, {icon: 2});
+				if (data.url) {
+					window.location = data.url;
+				}
+			}
+		}, "json");
+	}
+	function bank_del(_this) {
+		var id = $(_this).attr('data');
+		layer.config({
+			extend: 'extend/layer.ext.js'
+		});
+		layer.ready(function () {
+			layer.prompt({
+				title: "{:l('ENTER_THE_TRANSACTION_PASSWORD')}",
+				formType: 1
+			}, function (val) {
+				if (val) {
+					$.post("{:U('User/delbank')}", {id: id, paypassword: val}, function (data) {
+						if (data.status == 1) {
+							layer.msg(data.info, {icon: 1});
+							location.reload();
+						} else {
+							layer.msg(data.info, {icon: 2});
+							if (data.url) {
+								window.location = data.url;
+							}
+						}
+					}, "json");
+				}
+				;
+			});
+		});
+	}
+</script>
+
+
+
+<script>
+	var hints = "0";
+	if(hints == 1){
+		$('#hints').show();
+	}
+	$('#finance_box').addClass('active');
+	$('.finan_out').addClass('active');
+</script>	
+<include file="Public:footer" />

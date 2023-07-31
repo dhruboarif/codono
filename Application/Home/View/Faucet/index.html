@@ -1,0 +1,315 @@
+<include file="Public:header"/>
+
+<style>
+body{
+	background-color:#fff;
+}
+.margin-bottom15 {
+    margin-bottom: 20px;
+}
+
+.crowd_title {
+    color: #3e4149;
+}
+.font_24 {
+    font-size: 24px!important;
+}
+
+.crowd_rec {
+    border: 1px solid #d3d7db;
+    position: relative;
+}
+
+.bg_light_white {
+    background-color: #fff!important;
+}
+.m_5 {
+    margin: 5px;
+}
+
+
+.crowd_pic {
+    padding-left: 0;
+}
+
+.col-xs-6 {
+    width: 50%;
+	float:left;
+}
+
+
+
+a, button {
+    box-sizing: border-box;
+}
+a {
+    -webkit-transition: color .5s,background-color .5s,background .5s,border .5s,-webkit-transform .5s;
+    -moz-transition: color .5s,background-color .5s,background .5s,border.5s,-moz-transform .5s;
+    -o-transition: color .5s,background-color .5s,background .5s,border.5s,-o-transform .5s;
+    transition: color .5s,background-color .5s,background .5s,border .5s;
+}
+a {
+    color: #4285F4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+dd, div, dl, dt, form, img, li, ol, option, td, th, ul, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none outside none;
+}
+
+.crowd_info {
+    margin-top: 20px;
+    position: relative;
+    height: 403px;
+	background-color:#fff;
+}
+.fontweight {
+    font-weight: 700;
+}
+
+.font_16 {
+    font-size: 16px!important;
+}
+
+
+.crowd_info h2 a {
+    color: #32353d;
+}
+
+
+.crowd_info_desc {
+    color: #999;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+
+.crowd_info_detail {
+    height: 145px;
+    overflow: hidden;
+}
+
+
+.progressstyle1 {
+    background: #E4E4E4 !important;
+    height: 8px !important;
+    border-radius: 45px !important;
+}
+
+.m_b_10 {
+    margin-bottom: 10px!important;
+}
+
+.progress_codono {
+    height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #f5f5f5; 
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1); 
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1); 
+}
+
+
+.progress_cur {
+    background-color: #ff9035;
+}
+
+
+.progress.active .progress-bar, .progress-bar.active {
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    -o-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+}
+
+.progress-striped .progress-bar, .progress-bar-striped {
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: -o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+
+
+
+
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+
+.progresstitle1 {
+    color: #32353d;
+    font-size: 13px;
+    font-weight: normal !important;
+}
+
+.progresstitle2 {
+    float: right;
+    font-size: 13px;
+    color: #32353d;
+    font-weight: normal !important;
+}
+
+.crowd_status_tag {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    left: 0;
+    font-size: 14px;
+    color: #222;
+    padding: 10px 20px;
+    display: inline;
+    text-align: center;
+    border-top: 1px solid #eee;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+</style>
+
+
+<div class="container" style="min-height: 600px; padding-top: 20px;background-color:#fff;">
+		
+
+		<div class="row ">
+		<h1>{:l('Faucets')}</h1>
+		<hr style="margin-bottom:20px;margin-top:20px;border-top: 1px solid #eee;">
+			<div class="col-xs-12 col-xs-12 progress_border crowdfunding_items">
+				<ul id="crowdfundingul" class="nav nav-tabs" role="tablist">
+					<li role="jxz" class="static active"><a href="#" onclick="return false;" role="tab">{:l('PROCESSING')}</a></li>
+					<li role="jjks" class="static middle"><a href="#" onclick="return false;" role="tab">{:l('PREHEATING')}</a></li>
+					<li role="yjs" class="static "><a href="#" onclick="return false;" role="tab">{:l('OVER')}</a></li>
+				</ul>
+				<div id="crowdfundingcontent" class="tab-content">
+
+					<div role="tabpanel" class="tab-pane fade in active" id="jxz">
+					<include file="Faucet:faucet_list_widget"/>
+					</div>
+					<div role="tabpanel" class="tab-pane fade in" id="jjks">
+
+
+					
+					<notempty name="list_yure">	
+						<volist name="list_yure" id="vo">
+							<include file="Faucet:faucet_list_widget_upcoming"/>
+						</volist>	
+					<else/>
+						<p class="text-center font_gray font_16">{:l('THE_CLASSIFICATION_NO_DATA')}</p>
+					</notempty>
+				
+					</div>
+					<div role="tabpanel" class="tab-pane fade " id="yjs">
+					<notempty name="list_jieshu">	
+						<volist name="list_jieshu" id="vo">
+							<include file="Faucet:faucet_list_widget_expired"/>
+						</volist>	
+					<else/>
+						<p class="text-center font_gray font_16">{:l('THE_CLASSIFICATION_NO_DATA')}</p>
+					</notempty>
+					
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+				<div class="col-sm-12">
+				<table class="table table-bordered table-striped table-condensed table-hover" id="orderlist">
+				</table>
+				</div>
+				</div>
+			</div>
+			
+			<script>
+				var hints = "0";
+				if(hints == 1){
+					$('#hints').show();
+				}
+				$('#Faucet_box').addClass('active');
+				
+				$(".static").click(function() {
+					$(".tab-pane").removeClass("in");
+					$(".tab-pane").removeClass("active");
+					$(".static").removeClass("active");
+					$(this).addClass("active");
+					$("#" + $(this).attr("role")).addClass("active in");
+				});
+				
+				
+				
+				
+			</script>
+		</div>
+
+	</div>
+	<script>
+	
+	
+	function buy_up(id) {
+	<php>if (!userid()){</php>
+	loginpop();
+	<php>}else{</php>
+$.post("{:U('Faucet/upbuy')}", {
+			id: id,
+			token:""
+		}, function (data) {
+			if (data.status == 1) {
+				layer.msg(data.info, {icon: 1});
+				window.location = "/faucet/log";
+			} else {
+				layer.msg(data.info, {icon: 2});
+				if (data.url) {
+					window.location = data.url;
+				}
+			}
+		}, "json");
+	<php>}</php>
+	}
+function getUselog() {
+        $.getJSON("/Faucet/getUselog?t=" + Math.random(), function (data) {
+            if (data) {
+                if (data['consumelog']) {
+                    var list = '<thead><tr><th>Time</th><th>Nickname</th><th>Coin</th><th>Amount</th></tr></thead><tbody>';
+                    var type = '';
+                    var typename = '';
+                    for (var i in data['consumelog']) {
+					var xdate = new Date(data['consumelog'][i]['addtime'] * 1000);
+					var iso = xdate.toISOString().match(/(\d{4}\-\d{2}\-\d{2})T(\d{2}:\d{2}:\d{2})/)
+					var truedate=iso[1] + ' ' + iso[2];
+                            list += '<tr><td >' + truedate + '</td><td >' + data['consumelog'][i]['username'] + '</td><td >' + data['consumelog'][i]['coinname'] + '</td><td >' + data['consumelog'][i]['price'] + '</td></tr>';
+							}
+							list +='</tbody>'
+                    $("#orderlist").html(list);
+                }
+            }
+        });
+        setTimeout('getUselog()', 5000);
+    }
+	$(function () {
+        getUselog();
+    });
+	</script>
+
+<include file="Public:footer"/>

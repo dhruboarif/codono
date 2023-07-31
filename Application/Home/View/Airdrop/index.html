@@ -1,0 +1,437 @@
+<include file="Public:header"/>
+
+<style>
+body{
+	background-color:#fff;
+}
+.margin-bottom15 {
+    margin-bottom: 20px;
+}
+
+.crowd_title {
+    color: #3e4149;
+}
+.font_24 {
+    font-size: 24px!important;
+}
+
+.crowd_rec {
+    border: 1px solid #d3d7db;
+    position: relative;
+}
+
+.bg_light_white {
+    background-color: #fff!important;
+}
+.m_5 {
+    margin: 5px;
+}
+
+
+.crowd_pic {
+    padding-left: 0;
+}
+
+.col-xs-6 {
+    width: 50%;
+	float:left;
+}
+
+
+
+a, button {
+    box-sizing: border-box;
+}
+a {
+    -webkit-transition: color .5s,background-color .5s,background .5s,border .5s,-webkit-transform .5s;
+    -moz-transition: color .5s,background-color .5s,background .5s,border.5s,-moz-transform .5s;
+    -o-transition: color .5s,background-color .5s,background .5s,border.5s,-o-transform .5s;
+    transition: color .5s,background-color .5s,background .5s,border .5s;
+}
+a {
+    color: #4285F4;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+dd, div, dl, dt, form, img, li, ol, option, td, th, ul, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none outside none;
+}
+
+.crowd_info {
+    margin-top: 20px;
+    position: relative;
+    height: 403px;
+	background-color:#fff;
+}
+.fontweight {
+    font-weight: 700;
+}
+
+.font_16 {
+    font-size: 16px!important;
+}
+
+
+.crowd_info h2 a {
+    color: #32353d;
+}
+
+
+.crowd_info_desc {
+    color: #999;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+
+.crowd_info_detail {
+    height: 145px;
+    overflow: hidden;
+}
+
+
+.progressstyle1 {
+    background: #E4E4E4 !important;
+    height: 8px !important;
+    border-radius: 45px !important;
+}
+
+.m_b_10 {
+    margin-bottom: 10px!important;
+}
+
+
+
+.progresstitle1 {
+    color: #32353d;
+    font-size: 13px;
+    font-weight: normal !important;
+}
+
+.progresstitle2 {
+    float: right;
+    font-size: 13px;
+    color: #32353d;
+    font-weight: normal !important;
+}
+
+.crowd_status_tag {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    left: 0;
+    font-size: 14px;
+    color: #222;
+    padding: 10px 20px;
+    display: inline;
+    text-align: center;
+    border-top: 1px solid #eee;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+</style>
+
+
+<div class="container">
+		<!-- content -->
+		
+		<!-- HEADLINE_PROJECT-->
+		<h2 class="margin-bottom15 text-center font_24 crowd_title">{:l('FEATURED')}</h2>
+		
+		
+		<notempty name="is_featured">
+		<div class="row bg_light_white crowd_rec m_5" >
+
+			<div class="col-xs-6 crowd_pic">
+				<img src="{$is_featured.image}" class="img-responsive" >
+			</div>
+			
+			<div class="col-xs-6 " style="padding-left:15px;padding-right:15px;">
+
+				<h2 class="fontweight font_16">
+					{$is_featured.name}
+				</h2>
+				<div class="crowd_info_desc">
+					<ul>
+
+					</ul>
+				</div>
+				<hr style="margin-top:20px;margin-bottom:20px;border-top: 1px solid #eee;">
+				<div class="crowd_info_detail">
+					<p>{$is_featured.content}</p>
+				</div>
+				<p>
+						<span class="progresstitle1">{:l('HOLD')} {$is_featured.coinname}</span> <span class="progresstitle2">{:l('REWARD')}:{$is_featured['num']*1} {$is_featured.coinjian}</span>
+				</p>
+				<p>
+					<span class="progresstitle1">{:l('STARTING_TIME')}{$is_featured.beginTime}</span> <span class="progresstitle2">{:l('END_TIME')}{$is_featured.endTime}</span>
+				</p>
+			</div>
+			
+			
+			
+
+		</div>
+		</notempty>
+		
+<style>
+.margin-top40 {
+    margin-top: 40px;
+}
+.row {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.crowdfunding_items {
+    min-height: 496.86px;
+    padding: 0px;
+}
+
+.col-xs-12 {
+    width: 100%;
+	float:left;
+}
+
+
+
+#crowdfundingul {
+    border-bottom: 1px solid transparent;
+}
+
+#crowdfundingul {
+    text-align: center;
+}
+
+
+#crowdfundingul li:focus, #crowdfundingul li.active, #crowdfundingul li:hover {
+    background-color: #4285F4;
+}
+
+#crowdfundingul li:first-child {
+    margin-right: -2px;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+#crowdfundingul li {
+    float: none;
+    display: inline-block;
+    border: 1px solid #4285F4;
+    color: #4285F4;
+    border-radius: 2px !important;
+}
+
+#crowdfundingul li:focus a, #crowdfundingul li.active a, #crowdfundingul li:hover a {
+    color: #fff;
+}
+
+#crowdfundingul li a {
+    color: #4285F4;
+    font-size: 15px;
+    text-align: center;
+    border-color: transparent !important;
+    background-color: transparent;
+    padding: 5px 20px;
+}
+.nav-tabs>li>a {
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+
+#crowdfundingcontent {
+    overflow: hidden;
+    padding: 20px 0px;
+    border: 0px solid transparent;
+    border-top: none;
+    margin-bottom: 10px;
+    line-height: 200%;
+}
+
+.tab-content>.tab-pane {
+    display: none;
+    visibility: hidden;
+}
+.tab-content>.active {
+    display: block;
+    visibility: visible;
+}
+
+.fade.in {
+    opacity: 1;
+}
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+
+
+
+.col-xs-6 {
+    width: 50%;
+	float:left;
+}
+
+
+.col-xs-3 {
+    width: 25%;
+	float:left;
+}
+.crowd-item {
+    margin-bottom: 20px;
+    height: 474px;
+}
+
+.col-xs-12 {
+    width: 100%;
+	float:left;
+}
+
+.box1 {
+    background-color: #fff;
+    padding: 0px;
+    border: 1px solid #e9e9e9;
+}
+
+
+#crowdfundingcontent img {
+    width: 100%;
+	max-height: 200px;
+}
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.location {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+#crowdfundingcontent h4 {
+    color: #32353d;
+}
+
+
+p {
+    margin: 0 0 10px;
+}
+
+
+.crowd_status_tag_sm {
+    font-size: 14px;
+    color: #222;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+
+</style>
+		
+		
+		
+		
+		
+		
+		<div style="clear:both;height:0px;width:0px;"></div>
+		
+		<div class="row margin-top40">
+		<hr style="margin-bottom:20px;margin-top:20px;border-top: 1px solid #eee;">
+			<div class="col-xs-12 col-xs-12 progress_border crowdfunding_items">
+				<ul id="crowdfundingul" class="nav nav-tabs" role="tablist">
+					<li role="jxz" class="static active"><a href="#" onclick="return false;" role="tab">{:l('PROCESSING')}</a></li>
+					<li role="jjks" class="static middle"><a href="#" onclick="return false;" role="tab">{:l('PREHEATING')}</a></li>
+					<li role="yjs" class="static "><a href="#" onclick="return false;" role="tab">{:l('OVER')}</a></li>
+				</ul>
+				<div id="crowdfundingcontent" class="tab-content">
+
+					<div role="tabpanel" class="tab-pane fade in active" id="jxz">
+					<notempty name="list_running">	
+						<volist name="list_running" id="vo">					
+						<include file="Airdrop:list_widget"/>
+					</volist>	
+					<else/>
+						<p class="text-center font_gray font_16">{:l('THE_CLASSIFICATION_NO_DATA')}</p>
+					</notempty>						
+					</div>
+					<div role="tabpanel" class="tab-pane fade in" id="jjks">
+
+
+					
+					<notempty name="list_upcoming">	
+						<volist name="list_upcoming" id="vo">
+							<include file="Airdrop:list_widget"/>
+						</volist>	
+					<else/>
+						<p class="text-center font_gray font_16">{:l('THE_CLASSIFICATION_NO_DATA')}</p>
+					</notempty>
+				
+					</div>
+					<div role="tabpanel" class="tab-pane fade " id="yjs">
+					<notempty name="list_ended">	
+						<volist name="list_ended" id="vo">
+							<include file="Airdrop:list_widget"/>
+						</volist>	
+					<else/>
+						<p class="text-center font_gray font_16">{:l('THE_CLASSIFICATION_NO_DATA')}</p>
+					</notempty>
+					
+					</div>
+				</div>
+			</div>
+			<script>
+				var hints = "0";
+				if(hints == 1){
+					$('#hints').show();
+				}
+				$('#Issue_box').addClass('active');
+				
+				$(".static").click(function() {
+					$(".tab-pane").removeClass("in");
+					$(".tab-pane").removeClass("active");
+					$(".static").removeClass("active");
+					$(this).addClass("active");
+					$("#" + $(this).attr("role")).addClass("active in");
+				});
+				
+				
+				
+				
+			</script>
+		</div>
+
+	</div>
+<include file="Public:footer"/>

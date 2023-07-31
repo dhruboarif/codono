@@ -1,0 +1,291 @@
+<include file="Public:header" />
+	
+		<!-- Page content -->
+		<div class="page-container">	
+	
+<include file="Finance:left" />
+
+		<!-- Main content -->
+			<div class="content-wrapper">
+			<div class="panel panel-flat">
+            <div class="panel-heading">
+                <h1>
+					<span>
+						{:l('ACCOUNT_FUNDING')}					</span>
+					<span>
+												<a class="right" onclick="$('#hints').slideToggle();"><i class="fa fa-hand-o-right move fz_14 mr5"></i><span class="fz_12 move">{:l('VIEW_DESCRIPTION')}</span></a>
+											</span>
+                </h1>
+            </div>
+            <div id="hints" class="mytips" style="display:none;">
+
+	            <p>                <notempty name="prompt_text">
+                    {$prompt_text}
+                </notempty></p>            </div>
+            <div class="panel-body ">
+                <div class="panel panel-primary">
+				<table class="table">
+				<tr><td>Fiat Currency:</td><td>
+	                <div class="weituo_bizhong" >
+		                <div class="bizhong_select">
+			                <div class="bz_btn">
+				              <img src="/Upload/coin/usd.png" alt="" style=" width: 22px;float: left;
+margin-top: 7px;
+margin-right: 5px;"/>
+				                								<span id="coin-default">
+									<select name="type" id="coin-select" style="margin-top: 6px;">
+																				<option value="usd"  selected="selected"  >{:l('USD')}</option>
+																			</select>
+								</span>
+			                </div>
+		                </div>
+		                <script>
+			                $("#coin-select").change(function () {
+				                var coin        = $("#coin-select option:selected").val();
+				                window.location = '{:U('Finance/mycz')}';
+			                });
+		                </script>
+		                <div class="bizhong_type" style="width: 220px;">
+			                <span>{:l('AVAILABLE')}<em class="coin-name"></em>:<font class="coin-balance">{$user_coin['usd']|NumToStr}</font></span>
+		                </div>
+	                </div>
+	                </td></tr>
+                    <tr>
+                        <td>{:l('RECHARGE_AMOUNT')}:</td>
+                        <td style="position: relative;">
+
+							<div class="form-group has-feedback">
+													<input type="text" class="form-control col-sm-3" id="usdin_num" maxlength="12" value="">
+													<div class="form-control-feedback" id="random">.{:tradenob()}</div>
+							</div>
+                         
+                        </td>
+                    </tr>
+	                <tr>
+                        <td class="usdin_type">{:l('RECHARGE_WAY')}:</td>
+                        <td class="payment-icon-list payment-list ">
+                            <ul style="padding-left:0px !important;">
+								<volist name="myczTypeList" id="vo">
+									<li class="wx" data="{$key}"><img src="__PUBLIC__/static/images/{$key}.png" width="100"></li>
+								</volist>
+                                   
+							</ul>
+                            <input type="hidden" id="usdin_type" value="">
+                        </td>
+                    </tr>
+	                <tr>
+                        <td></td>
+                        <td>
+                            <input type="button" class="btn btn-info btn-block" value="{:l('RECHARGE_IMMEDIATELY')}" onclick="usdin_up()">
+                        </td>
+                    </tr>
+				</table>
+                </div>
+				
+                <div class="step2 f_body">
+                    <table class="f_table" id="investLog_content">
+                        <thead>
+                        <tr>
+                            <th width="">{:l('RECHARGE_TIME')}</th>
+                            <th width="">{:l('PREPAID_ORDERS')}</th>
+                            <th width="">{:l('DEPOSIT_METHODS')}</th>
+                            <th width="">{:l('RECHARGE_AMOUNT')}</th>
+                            <th width="">{:l('THE_ACTUAL_ARRIVAL')}</th>
+                            <th width="">
+								<span>
+									<select id="status-select">
+
+										<option value="" >{:l('ALL_STATES')}</option>
+										<option value="1"
+										<eq name="status" value="1">selected</eq>
+										>{:l('UNPAID')}</option>
+										<option value="2"
+										<eq name="status" value="2">selected</eq>
+										>{:l('SUCCESSFUL_RECHARGE')}</option>
+										<option value="3"
+										<eq name="status" value="3">selected</eq>
+										>{:l('ARTIFICIAL_ARRIVAL')}</option>
+										<option value="4"
+										<eq name="status" value="4">selected</eq>
+										>{:l('PROCESSING')}</option>
+			
+			
+		  
+										
+                                    </select>
+
+									
+								</span>
+                            </th>
+                            <th width="">{:l('OPERATING')}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+						
+						
+						
+						<volist name="list" id="vo">
+						
+                           <tr>
+                            <td>{$vo.addtime|date='Y-m-d H:i:s',###}</td>
+	                        <td>{$vo.tradeno}</td>
+                            <td>{$vo.type}</td>
+                            <td>${$vo['num']|default="0.00"}</td>
+                            <td>${$vo['mum']|default="0.00"}</td>
+	                        <td>
+			                   
+							<eq name="vo.status" value="0">	
+							   <div>{:l('UNPAID')} | <a data-action="{$vo.typeEn}" data="{$vo['id']}"  onclick="usdin_remittance(this)" href="javascript:void(0)" style="    color: #2674FF!important;"> {:l('Mark as paid')} </a></div>
+			                </eq> 
+							<eq name="vo.status" value="1">
+								{:l('SUCCESSFUL_RECHARGE')}
+							</eq>
+							<eq name="vo.status" value="2">
+										Confirmed by Staff
+							</eq>
+							<eq name="vo.status" value="3">
+							Marked as paid
+							</eq>
+							<eq name="vo.status" value="4">
+							Processed and Being Verfied!
+							</eq>
+							 </td>
+		                        <td>
+			                        <div>
+				                        <a onclick="usdin_chakan({$vo['id']})" href="javascript:void(0)" class="cur" style="    color: #E55600!important;">{:l('View')}</a>
+			                        </div>
+		                        </td>
+	                         </tr>
+						</volist>	 
+							 
+							 
+							 
+                                             
+                        </tbody>
+                    </table>
+                    <div class="pages"> {$page}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript">
+    $("#status-select").val("{$status}");
+    $("#status-select").change(function () {
+        var status = $("#status-select option:selected").val();
+        var url = '/Finance/mycz';
+        if (status) {
+            url += '/status/' + status+'';
+        }
+        window.location = url;
+    });
+    function usdin_remittance(_this) {
+        var id = $(_this).attr('data');
+        var type = $(_this).attr('data-action');
+	    if(type == 'tenpay'){
+		    layer.config({
+			    extend: 'extend/layer.ext.js'
+		    });
+		    layer.ready(function () {
+			    layer.prompt({
+				    title: "{:l('AFTER_ENTERING_THE_SUCCESSFUL_')} 4 {:l('BIT_AND_CONFIRM')}",
+				    formType: 0
+			    }, function (val) {
+				    if (val) {
+					    $.post("/Finance/pay_remittance", {id: id,type:type, remark: val}, function (data) {
+						    if (data.status == 1) {
+							    layer.msg(data.info, {icon: 1});
+							    location.reload();
+						    } else {
+							    layer.msg(data.info, {icon: 2});
+							    if (data.url) {
+								    window.location = data.url;
+							    }
+						    }
+					    }, "json");
+				    }
+				    ;
+			    });
+		    });
+	    }else{
+		    $.post("/Finance/myczRemittance", {id: id,type:type}, function (data) {
+			    if (data.status == 1) {
+				    layer.msg(data.info, {icon: 1});
+				    window.location.reload();
+			    } else {
+				    layer.msg(data.info, {icon: 2});
+			    }
+		    }, "json");
+	    }
+    }
+    function usdin_chakan(id) {
+        layer.open({
+            title: 'Account Funding',
+            type: 2,
+            area: ['650px', '500px'],
+            content: ["{:U('Pay/mycz')}?id=" + id, 'no']
+        });
+    }
+    $(".payment-list li").first().addClass("curr");
+    $('#usdin_type').val($(".payment-list li").first().attr('data'));
+    $('.payment-list li').click (function () {
+        $(this).addClass ('curr').siblings ('li').removeClass ('curr');
+        $('#usdin_type').val($(this).attr('data'));
+    });
+	var lock = 0;
+    function usdin_up() {
+        var type = $('#usdin_type').val();
+        var num = $("#usdin_num").val();
+        if (type == "" || type == null) {
+            layer.tips('Choose recharging method', '.usdin_type', {tips: 2});
+            return false;
+        }
+        if (num == "" || num == null) {
+            layer.tips('please enter recharge amount', '#usdin_num', {tips: 2});
+            return false;
+        } else {
+            num = num + $('#random').html();
+        }
+	    if(lock){
+		    layer.msg('LOADING ,DO NOT REFRESH!!');
+		    return;
+	    }
+	    lock = 1;
+        $.post("/Finance/myczUp", {
+            type: type,
+            num: num
+        }, function (data) {
+	        lock = 0;
+            if (data.status == 1) {
+                layer.open({
+                    title: "ACCOUNT_FUNDING",
+                    type: 2,
+                    area: ['650px', '500px'],
+                    content: ["/Pay/mycz?id=" + data.url.id, 'no'],
+                    cancel: function () {
+                        window.location = "/Finance/mycz";
+                    }
+                });
+            } else {
+                layer.msg(data.info, {icon: 2});
+                if (data.url) {
+                    window.location = data.url;
+                }
+            }
+        }, "json");
+    }
+</script>
+
+<script>
+	var hints = "0";
+	if(hints == 1){
+		$('#hints').show();
+	}
+	$('#finance_box').addClass('active');
+	$('.finan_pay').addClass('active');
+</script>	
+	
+
+	
+<include file="Public:footer" />

@@ -1,0 +1,43 @@
+
+    <include file="Trade:html_header"/>
+<body id="mainbody" class="crypt-white">
+
+<!--Header Starts-->
+    <include file="Trade:header"/>
+<!--Header Ends-->
+    <div class="container-fluid">
+	 <div class="row">
+	<div class="leftwing col-sm-12  col-lg-12 col-xl-12 col-xxl-12">
+        <div class="row sm-gutters pt-3" id="firstRowWidgets">
+            <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-2">
+            <include file="Trade:buysellorders"/>    
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-8">
+             
+			<include file="Trade:graphs"/>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-2">
+                <include file="Trade:advance_widget_instruments"/>
+				<include file="Trade:dealrecords"/>
+            </div>
+        </div>
+		</div>
+	
+	</div>
+    </div>
+    <div class="container-fluid">
+        <div class="row sm-gutters">
+            <div class="col-xl-12 col-lg-12 ">
+                <include file="Trade:historyblock"/>
+        </div>
+    </div>
+	         
+    <footer>
+
+    </footer>
+<include file="Trade:footer_scripts"/>
+<include file="Trade:stop-buy-script"/>
+<include file="Trade:widget_chat"/>
+</body>
+
+</html>

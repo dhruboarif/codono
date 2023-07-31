@@ -1,0 +1,491 @@
+2020-01-23 06:29:46 pid:1 Error: Class 'Workerman\Connection' not found in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:33
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\AsyncTcpConnection.php(340): {closure}(Object(Workerman\Connection\AsyncTcpConnection))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(302): Workerman\Connection\AsyncTcpConnection->checkConnection(Resource id #29)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2402): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(44): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 06:29:46 pid:1 Worker process terminated
+2020-01-23 06:32:41 pid:1 Error: Class 'Workerman\Connection' not found in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:33
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\AsyncTcpConnection.php(340): {closure}(Object(Workerman\Connection\AsyncTcpConnection))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(302): Workerman\Connection\AsyncTcpConnection->checkConnection(Resource id #29)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2402): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(44): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 06:32:41 pid:1 Worker process terminated
+2020-01-23 06:36:34 pid:1 Error: Class 'Workerman\Connection' not found in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:33
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\AsyncTcpConnection.php(340): {closure}(Object(Workerman\Connection\AsyncTcpConnection))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(302): Workerman\Connection\AsyncTcpConnection->checkConnection(Resource id #29)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2402): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(44): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 06:36:34 pid:1 Worker process terminated
+2020-01-23 06:36:56 pid:1 Error: Class 'Workerman\Connection' not found in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:34
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\AsyncTcpConnection.php(340): {closure}(Object(Workerman\Connection\AsyncTcpConnection))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(302): Workerman\Connection\AsyncTcpConnection->checkConnection(Resource id #29)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2402): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(44): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 06:36:56 pid:1 Worker process terminated
+2020-01-23 06:51:00 pid:1 Error: Function name must be a string in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:36
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\AsyncTcpConnection.php(340): {closure}(Object(Workerman\Connection\AsyncTcpConnection))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(302): Workerman\Connection\AsyncTcpConnection->checkConnection(Resource id #29)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(44): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 06:51:00 pid:1 Worker process terminated
+2020-01-23 06:51:11 pid:1 TypeError: Argument 1 passed to Workerman\MySQL\Connection::cols() must be of the type array, null given, called in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php on line 36 and defined in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1472
+Stack trace:
+#0 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(36): Workerman\MySQL\Connection->cols(NULL)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\AsyncTcpConnection.php(340): {closure}(Object(Workerman\Connection\AsyncTcpConnection))
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(302): Workerman\Connection\AsyncTcpConnection->checkConnection(Resource id #29)
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#6 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#7 C:\dev\Port\socketbot.php(44): Workerman\Worker::runAll()
+#8 {main}
+2020-01-23 06:51:11 pid:1 Worker process terminated
+2020-01-23 07:49:48 pid:1 Error: Class 'Timer' not found in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:30
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2386): {closure}(Object(Workerman\Worker))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#4 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#5 {main}
+2020-01-23 07:49:49 pid:1 Worker process terminated
+2020-01-23 07:50:14 pid:1 Error: Call to a member function update() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:45
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2386): {closure}(Object(Workerman\Worker))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#4 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#5 {main}
+2020-01-23 07:50:15 pid:1 Worker process terminated
+2020-01-23 07:50:39 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function read() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:34
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+  thrown in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php on line 34"
+2020-01-23 07:53:01 pid:1 Error: Call to a member function write() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:200
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #33)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 07:53:01 pid:1 Worker process terminated
+2020-01-23 07:54:12 pid:1 Error: Call to a member function write() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:200
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #33)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 07:54:12 pid:1 Worker process terminated
+2020-01-23 07:55:12 pid:1 Error: Call to a member function update() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:31
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2386): {closure}(Object(Workerman\Worker))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#4 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#5 {main}
+2020-01-23 07:55:13 pid:1 Worker process terminated
+2020-01-23 07:55:33 pid:1 Error: Call to a member function update() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:31
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2386): {closure}(Object(Workerman\Worker))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#4 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#5 {main}
+2020-01-23 07:55:34 pid:1 Worker process terminated
+2020-01-23 07:55:54 pid:1 Error: Call to a member function write() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:197
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #33)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 07:55:54 pid:1 Worker process terminated
+2020-01-23 07:56:22 pid:1 Error: Call to a member function write() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:197
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #32)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 07:56:22 pid:1 Worker process terminated
+2020-01-23 07:56:39 pid:1 Error: Call to a member function write() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:207
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #32)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 07:56:39 pid:1 Worker process terminated
+2020-01-23 07:57:05 pid:1 Error: Class 'Timer' not found in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:237
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #32)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 07:57:05 pid:1 Worker process terminated
+2020-01-23 07:57:18 pid:1 Error: Class 'Workerman\Timer' not found in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:238
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #32)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 07:57:18 pid:1 Worker process terminated
+2020-01-23 07:58:44 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught ArgumentCountError: Too few arguments to function {closure}(), 0 passed in C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php on line 232 and exactly 1 expected in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:239
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+  thrown in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php on line 239"
+2020-01-23 07:59:01 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught ArgumentCountError: Too few arguments to function {closure}(), 0 passed in C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php on line 232 and exactly 1 expected in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:239
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+  thrown in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php on line 239"
+2020-01-23 08:19:00 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function update() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:250
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+  thrown in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php on line 250"
+2020-01-23 08:20:40 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function update() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:250
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+  thrown in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php on line 250"
+2020-01-23 08:21:01 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function update() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:250
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+  thrown in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php on line 250"
+2020-01-23 08:22:31 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught Error: Call to a member function update() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:251
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+  thrown in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php on line 251"
+2020-01-23 08:24:31 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `new_price` = :new_price,`buy_price` = :buy_price,`sell_price` = :sell_price,`min_price` = :min_price,`max_price` = :max_price,`volume` = :volume,`change` = :change WHERE name=btc_usd SQLSTATE[42S22]: Column not found: 1054 Unknown column 'btc_usd' in 'where clause' in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', Array)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(252): Workerman\MySQL\Connection->query()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->r in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 08:25:51 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `new_price` = :new_price,`buy_price` = :buy_price,`sell_price` = :sell_price,`min_price` = :min_price,`max_price` = :max_price,`volume` = :volume,`change` = :change WHERE name SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect INTEGER value: 'ltc_usd' in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', Array)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(252): Workerman\MySQL\Connection->query()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker-> in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 08:30:11 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught ArgumentCountError: Too few arguments to function Workerman\MySQL\Connection::bindValue(), 1 passed in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php on line 252 and exactly 2 expected in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1096
+Stack trace:
+#0 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(252): Workerman\MySQL\Connection->bindValue(Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#6 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#7 C:\dev\Port\socketbot.php(45): Worke in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1096"
+2020-01-23 08:31:01 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `sell_price` = :sell_price,`buy_price` = :buy_price,`min_price` = :min_price,`max_price` = :max_price,`volume` = :volume,`change` = :change WHERE name SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', Array)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(252): Workerman\MySQL\Connection->query()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot\vendor\workerman\ in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 08:32:21 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `sell_price` = :sell_price,`buy_price` = :buy_price,`min_price` = :min_price,`max_price` = :max_price,`volume` = :volume,`change` = :change WHERE name=btc_usd SQLSTATE[42S22]: Column not found: 1054 Unknown column 'btc_usd' in 'where clause' in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', Array)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(252): Workerman\MySQL\Connection->query()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\Socke in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 08:33:01 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `sell_price` = :sell_price,`buy_price` = :buy_price,`min_price` = :min_price,`max_price` = :max_price,`volume` = :volume,`change` = :change WHERE name="btc_usd" SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', Array)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(252): Workerman\MySQL\Connection->query()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot\vendor\ in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 08:39:51 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:SELECT round FROM `codono_market` WHERE `name` = btc_usd SQLSTATE[42S22]: Column not found: 1054 Unknown column 'btc_usd' in 'where clause' in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('SELECT round FR...', NULL)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(254): Workerman\MySQL\Connection->query('SELECT round FR...')
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#7 C:\dev\Port\Soc in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 08:42:01 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `sell_price` = :sell_price,`buy_price` = :buy_price,`min_price` = :min_price,`max_price` = :max_price,`volume` = :volume,`change` = :change WHERE name='btc_usd' SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', Array)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(256): Workerman\MySQL\Connection->query()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot\vendor\ in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 08:44:01 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `sell_price` = :sell_price,`buy_price` = :buy_price,`min_price` = :min_price,`max_price` = :max_price,`volume` = :volume,`change` = :change WHERE 'name'='btc_usd' SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', Array)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(256): Workerman\MySQL\Connection->query()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot\vendo in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 08:44:31 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `sell_price` = :sell_price,`buy_price` = :buy_price,`min_price` = :min_price,`max_price` = :max_price,`volume` = :volume,`change` = :change WHERE `name`='btc_usd' SQLSTATE[HY093]: Invalid parameter number: parameter was not defined in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', Array)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(256): Workerman\MySQL\Connection->query()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot\vendo in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 08:58:46 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `new_price` = 8522.11 , `buy_price` = 8522.1 , `sell_price` = 8522.2 , `min_price` = 8501.8 ,`max_price` = 8708.94 , `volume` = 206431561.82999 , `change` = -1.8  WHERE `name` = btc_usd SQLSTATE[42S22]: Column not found: 1054 Unknown column 'btc_usd' in 'where clause' in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', NULL)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(257): Workerman\MySQL\Connection->query('UPDATE `codono_...')
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397) in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 09:12:11 pid:1 Worker process terminated
+2020-01-23 09:17:31 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `new_price` = A , `buy_price` = A , `sell_price` = A , `min_price` = A ,`max_price` = A , `volume` = A , `change` = A  WHERE `name` = 'btc_usd' SQLSTATE[42S22]: Column not found: 1054 Unknown column 'A' in 'field list' in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', NULL)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(259): Workerman\MySQL\Connection->query('UPDATE `codono_...')
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 09:19:31 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `new_price` = A , `buy_price` = A , `sell_price` = A , `min_price` = A ,`max_price` = A , `volume` = A , `change` = A  WHERE `name` = 'btc_usd' SQLSTATE[42S22]: Column not found: 1054 Unknown column 'A' in 'field list' in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', NULL)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(260): Workerman\MySQL\Connection->query('UPDATE `codono_...')
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 09:21:55 pid:1 Error: Call to a member function read() on null in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:97
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #30)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-23 09:21:55 pid:1 Worker process terminated
+2020-01-23 09:22:51 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `new_price` = A , `buy_price` = A , `sell_price` = A , `min_price` = A ,`max_price` = A , `volume` = A , `change` = A  WHERE `name` = 'btc_usd' SQLSTATE[42S22]: Column not found: 1054 Unknown column 'A' in 'field list' in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', NULL)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(116): Workerman\MySQL\Connection->query('UPDATE `codono_...')
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-23 09:23:41 pid:1 Worker process terminated with ERROR: E_ERROR "Uncaught PDOException: SQL:UPDATE `codono_market` SET `new_price` = A , `buy_price` = A , `sell_price` = A , `min_price` = A ,`max_price` = A , `volume` = A , `change` = A  WHERE `name` = 'btc_usd' SQLSTATE[42S22]: Column not found: 1054 Unknown column 'A' in 'field list' in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php:1770
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php(1828): Workerman\MySQL\Connection->execute('UPDATE `codono_...', NULL)
+#1 C:\dev\Port\SocketBot\Huobiapi\start_huobi.php(257): Workerman\MySQL\Connection->query('UPDATE `codono_...')
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(232): {closure}()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(280): Workerman\Events\Select->tick()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#6 C:\dev\Port\SocketBot in C:\dev\Port\SocketBot\vendor\workerman\mysql\src\Connection.php on line 1770"
+2020-01-30 08:29:36 pid:1 Error: Class 'HuobiRedis' not found in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:118
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #30)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-30 08:29:36 pid:1 Worker process terminated
+2020-01-30 08:30:25 pid:1 Error: Class 'HuobiRedis' not found in C:\dev\Port\SocketBot\Huobiapi\start_huobi.php:118
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Connection\TcpConnection.php(656): {closure}(Object(Workerman\Connection\AsyncTcpConnection), Array)
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\Select.php(292): Workerman\Connection\TcpConnection->baseRead(Resource id #30)
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\Select->loop()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#6 C:\dev\Port\socketbot.php(45): Workerman\Worker::runAll()
+#7 {main}
+2020-01-30 08:30:25 pid:1 Worker process terminated
+2020-02-01 10:33:36 pid:1 Error: Class 'Factory' not found in C:\dev\Port\SocketBot\SocketCode\start_exchange.php:28
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2386): {closure}(Object(Workerman\Worker))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#4 C:\dev\Port\SocketBot\SocketCode\start_exchange.php(50): Workerman\Worker::runAll()
+#5 C:\dev\Port\socketbot.php(38): require_once('C:\\dev\\Port\\Soc...')
+#6 {main}
+2020-02-01 10:33:37 pid:1 Worker process terminated
+2020-02-01 12:41:12 pid:1 Worker process terminated with ERROR: E_RECOVERABLE_ERROR "Object of class React\Promise\Promise could not be converted to string in C:\dev\Port\SocketBot\SocketCode\start_exchange.php on line 24"
+2020-02-08 08:12:09 pid:1 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php on line 2468 and exactly 2 expected in C:\dev\Port\SocketBot\SocketCode\start_test.php:14
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2468): {closure}(Object(Workerman\Connection\TcpConnection))
+#1 C:\dev\Port\SocketBot\vendor\react\event-loop\src\StreamSelectLoop.php(245): Workerman\Worker->acceptConnection(Resource id #25)
+#2 C:\dev\Port\SocketBot\vendor\react\event-loop\src\StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity(NULL)
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\React\Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\React\Base.php(137): Workerman\Events\React\Base->run()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\React\Base->loop()
+#6 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#7 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#8 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#9 C:\dev\Port\SocketBot\SocketCode\start_test.php(36): Workerman\Worker::runAll()
+#10 C:\dev\Port\socketbot.php(38): require_once('C:\\dev\\Port\\Soc...')
+#11 {main}
+2020-02-08 08:12:09 pid:1 Worker process terminated
+2020-02-08 08:20:26 pid:1 Error: Call to a member function createClient() on null in C:\dev\Port\SocketBot\SocketCode\start_test.php:21
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2468): {closure}(Object(Workerman\Connection\TcpConnection))
+#1 C:\dev\Port\SocketBot\vendor\react\event-loop\src\StreamSelectLoop.php(245): Workerman\Worker->acceptConnection(Resource id #25)
+#2 C:\dev\Port\SocketBot\vendor\react\event-loop\src\StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity(NULL)
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\React\Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\React\Base.php(137): Workerman\Events\React\Base->run()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\React\Base->loop()
+#6 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#7 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#8 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#9 C:\dev\Port\SocketBot\SocketCode\start_test.php(39): Workerman\Worker::runAll()
+#10 C:\dev\Port\socketbot.php(38): require_once('C:\\dev\\Port\\Soc...')
+#11 {main}
+2020-02-08 08:20:26 pid:1 Worker process terminated
+2020-02-08 15:22:01 pid:1 ArgumentCountError: Too few arguments to function {closure}(), 1 passed in C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php on line 2468 and exactly 2 expected in C:\dev\Port\SocketBot\SocketCode\start_test.php:22
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2468): {closure}(Object(Workerman\Connection\TcpConnection))
+#1 C:\dev\Port\SocketBot\vendor\react\event-loop\src\StreamSelectLoop.php(245): Workerman\Worker->acceptConnection(Resource id #25)
+#2 C:\dev\Port\SocketBot\vendor\react\event-loop\src\StreamSelectLoop.php(212): React\EventLoop\StreamSelectLoop->waitForStreamActivity(NULL)
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\React\Base.php(254): React\EventLoop\StreamSelectLoop->run()
+#4 C:\dev\Port\SocketBot\vendor\workerman\workerman\Events\React\Base.php(137): Workerman\Events\React\Base->run()
+#5 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2401): Workerman\Events\React\Base->loop()
+#6 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#7 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#8 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#9 C:\dev\Port\SocketBot\SocketCode\start_test.php(35): Workerman\Worker::runAll()
+#10 C:\dev\Port\socketbot.php(38): require_once('C:\\dev\\Port\\Soc...')
+#11 {main}
+2020-02-08 15:22:01 pid:1 Worker process terminated
+2020-02-08 15:40:13 pid:1 Error: Call to undefined method stdClass::connect() in C:\dev\Port\SocketBot\SocketCode\start_test.php:42
+Stack trace:
+#0 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(2386): {closure}(Object(Workerman\Worker))
+#1 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1397): Workerman\Worker->run()
+#2 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(1340): Workerman\Worker::forkWorkersForWindows()
+#3 C:\dev\Port\SocketBot\vendor\workerman\workerman\Worker.php(539): Workerman\Worker::forkWorkers()
+#4 C:\dev\Port\SocketBot\SocketCode\start_test.php(45): Workerman\Worker::runAll()
+#5 C:\dev\Port\socketbot.php(38): require_once('C:\\dev\\Port\\Soc...')
+#6 {main}
+2020-02-08 15:40:14 pid:1 Worker process terminated

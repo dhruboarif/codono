@@ -1,0 +1,23 @@
+<notempty name="list_jieshu">	
+<table class="table table-bordered table-striped table-condensed table-hover" id="faucettable">
+<thead>
+<tr>
+<th>{:l('Name')}</th>
+<th>{:l('Coin')}</th>
+<th>{:l('Payout Amount')}</th>
+<th>{:l('Time interval')}</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+				<volist name="list_jieshu" id="vo">				
+						<tr>
+						<td>{$vo.name}</td>
+						<td>{$vo.coinname}</td>
+						<td>{$vo.buycoin}{$vo['price']*1}</td>
+						<td>{$vo.tian} Hours</td>
+						<td><a class="btn btn-block btn-info" onclick="buy_up({$vo.id})" href="#faucettable">{:l('Claim')}</a></td>
+						</tr>
+				</volist>
+</tbody>
+</table>

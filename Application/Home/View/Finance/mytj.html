@@ -1,0 +1,173 @@
+<include file="Public:header" />
+		<!-- Page content -->
+		<div class="page-container">	
+	
+<include file="Finance:left" />
+
+		<!-- Main content -->
+			<div class="content-wrapper">
+		<div class="panel panel-flat">
+			<div class="panel-heading">
+				<h1>
+					<span>
+						{:l('INVITE_FRIENDS')}					</span>
+					<span>
+												<a class="right" onclick="$('#hints').slideToggle();"><i class="fa fa-hand-o-right move fz_14 mr5"></i><span class="fz_12 move">{:l('VIEW_DESCRIPTION')}</span></a>
+											</span>
+				</h1>
+				<div id="hints" class="mytips" style="display:none;">
+				
+				<p>
+				
+						<notempty name="prompt_text">
+								{$prompt_text}
+						</notempty>
+				
+				
+				</p>			</div>
+			</div>
+			<div class="panel-body">
+			<div id="qrcode-wallet" style="display: inline-block;margin-top: 60px;float: right;margin-right: 30px;" width="100">
+				<saon id="codeaa"></saon>
+				<p id="qrcode-t" style="font-size: 22px;text-align: center;margin-top: 30px;" class="move">{:l('YOUR_EXCLUSIVE_PROMOTION_OF_TW')}</p>
+			</div>
+			<div class="quicklink invite-content" style="margin-top: 15px;">
+				<h4>{:l('EXCLUSIVE_INVITATION_CODE')}</h4>
+				<p class="tip">{:l('THIS_IS_YOUR_SPECIAL_INVITATIO')}</p>
+				<p>
+					<input type="text" class="area texts" id="invite-input" value="{$user['invit']}" style="width: 100px;vertical-align: bottom;"><input type="button" value="{:l('COPY')}" data-clipboard-target="invite-input" class="ml20  btn-quick inviteCopyButton  btns2" id="copy_button1" style="width:100px;" onclick="copyfunc2()">
+				</p>
+			</div>
+			<div class="quicklink invite-content">
+				<h4>{:l('EXCLUSIVE_LINKS')}</h4>
+				<p class="tip">{:l('THIS_IS_YOUR_SPECIAL_LINK_YOU_')}</p>
+				<p>
+					<input type="text" class="area texts" id="invite-inputa" value="{:SITE_URL}Login/register?invite={$user['invit']}" style="width: 250px;vertical-align: bottom;"><input type="button" value="{:l('COPY')}" data-clipboard-target="invite-inputa" class="ml20 btn-quick inviteCopyButton btns2" id="copy_button2" style="width:100px;" onclick="copyfunc1()">
+				</p>
+			</div>
+			<div class="quicklink invite-content">
+				<h4>{:l('EXCLUSIVE_ADVERTISING_SLOGAN')}</h4>
+				<p class="tip">{:l('THIS_IS_YOUR_EXCLUSIVE_ADVERTI')}</p>
+				<p>
+					<textarea type="text" class="area texts" id="invite-textarea" style="width: 350px;height: 100px;line-height: 25px;" >{$C['invit_text_txt']} {:SITE_URL}Login/register?invite={$user['invit']}</textarea>
+					<input type="button" value="{:l('COPY')}" data-clipboard-target="invite-textarea" class="ml20 btn-quick inviteCopyButton zeroclipboard-is-hover btns2 " id="copy_button3" style="width:100px;"  onclick="copyfunc3()">
+				</p>
+			</div>
+			
+			
+			
+			<div class="quicklink">
+				<h4>{:l('QUICK_SHARE_TO_THE_COMMUNITY')}</h4>
+				<div class="reward-share">
+					<a href="javascript:;" title="{:l('Facebook')}" class="wlb_facebook"> <span class="icon icon-facebook"></span> <i>{:l('Facebook')}</i> </a> 
+					<a href="javascript:;" title="{:l('Twitter')}" class="wlb_twitter"> <span class="icon icon-twitter"></span> <i>{:l('Twitter')}</i> </a> 
+					<a href="javascript:;" title="{:l('Google Plus')}" class="wlb_googleplus"> <span class="icon icon-google"></span> <i>{:l('Google Plus')}</i> </a> 
+
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.qrcode.min.js"></script>
+       <script type="text/javascript" >
+       $('#codeaa').qrcode({
+         render: "table", //table
+         size:200,
+         text: "{:SITE_URL}?invit={$user['invite']}" ////Any content
+       }); //ANY_STRING
+       </script>
+	   
+	   
+<script type="text/javascript" src="__PUBLIC__/Home/js/ZeroClipboard.min.js"></script>
+<script>
+	var client = new ZeroClipboard(document.getElementById("copy-button"));
+	client.on("ready", function (readyEvent) {
+		client.on("aftercopy", function (event) {
+			event.target.style.display = "none";
+		});
+	});
+	ZeroClipboard.config({swfPath:'__PUBLIC__/Home/js/ZeroClipboard.swf'});
+	var clip = new ZeroClipboard(document.getElementById("copy"));
+	var _share_title = encodeURI("{:l('INVITE_FRIENDS')}");
+	var _share_content = encodeURI("{$C['invit_text_txt']}");
+	var _share_url = encodeURIComponent("{:SITE_URL}Login/register?invite={$user['invit']}");
+	var _share_pic = '/';
+	$(document).ready(function () {
+		var clip1 = new ZeroClipboard(document.getElementById("copy_button1"));
+		var clip2 = new ZeroClipboard(document.getElementById("copy_button2"));
+		var clip3 = new ZeroClipboard(document.getElementById("copy_button3"));
+		clip1.on("copy", function (e) {
+			layer.msg('Copy successful', {icon: 1});
+		});
+		clip2.on("copy", function (e) {
+			layer.msg('Copy successful', {icon: 1});
+		});
+		clip3.on("copy", function (e) {
+			layer.msg('Copy successful', {icon: 1});
+		});
+		$(".wlb_facebook").click(function () {
+			window.open("https://www.facebook.com/sharer/sharer.php?u=" + _share_url + "&title=" + _share_content);
+		});
+		$(".wlb_twitter").click(function () {
+			window.open("http://twitter.com/share?text=" + _share_content+"&url=" + _share_url );
+		});
+		$(".wlb_googleplus").click(function () {
+			window.open("https://plus.google.com/share?url=" + _share_url + "&title=" + _share_title + "&pics=" + _share_pic + "&desc=" + _share_content);
+		});
+	});
+</script>
+
+
+
+<script>
+function copyfunc1() {
+  /* Get the text field */
+  var copyText = document.getElementById("invite-inputa");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+function copyfunc3() {
+  /* Get the text field */
+  var copyText = document.getElementById("invite-textarea");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+
+function copyfunc2() {
+  /* Get the text field */
+  var copyText = document.getElementById("invite-input");
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+	var hints = "0";
+	if(hints == 1){
+		$('#hints').show();
+	}
+	$('#finance_box').addClass('active');
+	$('.finan_invit').addClass('active');
+</script>	
+	
+<include file="Public:footer" />

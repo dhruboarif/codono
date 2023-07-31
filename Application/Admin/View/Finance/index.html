@@ -1,0 +1,130 @@
+<include file="Public:header"/>
+<script src="__PUBLIC__/Admin/js/layer/laydate/laydate.js"></script>
+<div id="main-content">
+    <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+        <button class="close fixed" style="margin-top: 4px;">&times;</button>
+        <div class="alert-content">Warnings</div>
+    </div>
+    <div id="main" class="main">
+        <div class="main-title-h">
+            <span class="h1-title">Financial details</span>
+        </div>
+        <div class="cf">
+		
+			<div class="fl">
+				<button class="btn btn-success" url="{:U('Finance/codono_financeExcel')}" target-form="ids" id="submit" type="submit">Export selected</button>
+				<a class="btn btn-success" href="{:U('Finance/codono_financeAllExcel')}" >Export all</a>
+			</div>
+		
+		
+            <div class="search-form fr cf">
+                <div class="sleft">
+                    <form name="formSearch" id="formSearch" method="get" name="form1" >
+                        <select style=" width: 160px; float: left; margin-right: 10px;" name="field" class="form-control">
+                            <option value="username"
+                            <eq name="Think.get.field" value="username">selected</eq>
+                            >Username</option>
+                        </select>
+                        <input type="text" name="name" class="search-input form-control  " value="{$Think.get.name}" placeholder="Enter text to search" style="">
+                        <a class="sch-btn" href="javascript:;" id="search"> <i class="btn-search"></i> </a>
+                    </form>
+                    <script>
+                        //Search function
+                        $(function(){
+                            $('#search').click(function(){
+                                $('#formSearch').submit();
+                            });
+                        });
+                        //Enter search
+                        $(".search-input").keyup(function(e){
+                            if(e.keyCode===13){
+                                $("#search").click();
+                                return false;
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="data-table table-striped">
+		 <form id="form" action="{:U('Finance/codono_financeExcel')}" method="post" class="form-horizontal">
+            <table class="">
+                <thead>
+                <tr>
+                    <th class="row-selected row-selected"><input class="check-all" type="checkbox"/></th>
+                    <th class="">ID</th>
+                    <th class="">Username</th>
+                    <th class="">Currency</th>
+                    <th class="">Amount</th>
+                    <th class="">Action</th>
+                    <th class="">Balance Before</th>
+                    <th class="">Balance After</th>
+                    <th class="">Note</th>
+                    <th class="">Time</th>
+                    <th class="">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <notempty name="list">
+                    <volist name="list" id="vo">
+                        <tr>
+                            <td><input class="ids" type="checkbox" name="id[]" value="{$vo.id}"/></td>
+                            <td>{$vo['id']}</td>
+                            <td>{$vo['username']}</td>
+                            <td>{$vo['coinname']}</td>
+                            <td>{$vo['fee']}</td>
+                            <td>{$vo['type']}</td>
+                            <td>normal : {$vo['num_a']}<br>
+                                freeze : {$vo['num_b']}<br>
+                                total : {$vo['num']}<br>
+                            </td>
+                            <td>normal : {$vo['mum_a']}<br>
+                                freeze : {$vo['mum_b']}<br>
+                                total : {$vo['mum']}<br>
+                            </td>
+                            <td>name : {$vo['name']}<br>
+                                Detail :
+                                <empty name="vo['nameid']"><font color="red">Abnormal</font>
+                                    <else/>
+                                    {$vo['nameid']}
+									</empty>
+                                <br>
+                                Remark : <span title="{$vo['remark']}" class="glyphicon glyphicon-info-sign"></span><br>
+                            </td>
+                            <td>{$vo['addtime']}</td>
+                            <td>
+                                <eq name="vo['status']" value="1">normal
+                                    <else/>
+                                    <font color="red">Compared to the previous record<br>Abnormal<br>Error is greater than1</font></eq>
+                            </td>
+                        </tr>
+                    </volist>
+                    <else/>
+                    <td colspan="12" class="text-center">No contents!</td>
+                </notempty>
+                </tbody>
+            </table>
+			</form>
+            <div class="page">
+                <div>{$page}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	//submit Form
+	$('#submit').click(function () {
+		$('#form').submit();
+	});
+</script>
+
+
+
+<include file="Public:footer"/>
+<block name="script">
+    <script type="text/javascript" charset="utf-8">
+        //Highlight navigation
+        highlight_subnav("{:U('Finance/index')}");
+    </script>
+</block>

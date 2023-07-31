@@ -1,0 +1,129 @@
+<include file="Public:header" />
+
+<div class="page-container">	<!-- breadcrumb component -->
+		<div class="page-content">	
+	
+<include file="User:left" />
+	<div class="panel panel-flat ">
+				<div class="panel panel-heading">
+				<h1 class="panel-title">
+					<span>
+						Update {:l('TRANSACTION_PASSWORD')}					</span>
+				</h1>
+			</div>
+		<div class="panel-body">
+			<div id="reg_index" class="reg_wrap">
+				<div class="reg_input_box reg-fb" id="email_reg">
+			<div class="mask_wrap_title">{:l('CAPTCHA')}</div>
+			<input type="text" id="verify" value="" class="texts" style="width: 98px; box-shadow: none;"/>
+				<img id="verify_up" class="codeImg reloadverify" src="{:U('Verify/code')}" title="{:l('REFRESH')}" onclick="this.src=this.src+'?t='+Math.random()" width="100" height="34">
+			
+				<input type="button" class="btn btn-info btn-sm" onclick="emailsend();" value="Send OTP">
+		
+				
+				</div>
+				<div class="reg_input_box reg-fb">
+					<div class="mask_wrap_title">{:l('SECURITY_CODE')}:</div>
+					<input id="real_verify" type="text" class="texts w300 hg40" placeholder="{:l('PLEASE_ENTER_VERIFICATION_CODE')}"/> 
+					<span id="reg_cellphone" class="" style="position:absolute;left: 182px;top: 2px;"></span>
+				</div>
+				<div class="reg_input_box reg-fb">
+					<div class="mask_wrap_title">New Fund Password:</div>
+					<input id="paypassword" type="text" class="texts w300 hg40" placeholder="Please choose new fund password"/> 
+					<span id="reg_fundpwd" class="" style="position:absolute;left: 182px;top: 2px;"></span>
+				</div>
+				<div class="formbody">
+					<input type="button" class="btns2 w300 hg40" onclick="findpwd_up();" value="Update Fund Password">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+<script>
+	$(function () {
+		var height = $(document).height();
+		if (height < 1000) {
+			height = 1000;
+		}
+
+	});
+
+	
+	function emailsend() {
+
+		var verify = $("#verify").val();
+		if (verify == "" || verify == null) {
+			layer.tips("{:l('PLEASE_ENTER_THE_CAPTCHA_CODE')}", '#verify', {tips: 2});
+			return false;
+		}
+		$.post("/Findpwd/emailcode", {
+			verify: verify,
+			token: ""
+		}, function (data) {
+			if (data.status == 1) {
+				layer.msg(data.info, {icon: 1});
+				$("#cellphone_verify").focus();
+				$('#cellphone').attr("disabled", "disabled");
+				$('#cellphones').attr("disabled", "disabled");
+				var obj      = $('#reg_cellphone');
+				var wait     = 60;
+				var interval = setInterval(function () {
+					obj.html("<a>" + wait + " {:l('SEC_CAN_BE_SENT_AGAIN')}" + "</a>");
+					wait--;
+					if (wait < 0) {
+						clearInterval(interval);
+						$(".reloadverify").click();
+						$("#verify").val('');
+						obj.html('<a class="move" onclick="emailsend()">{:l("CLICK_RESEND")}</a>');
+					}
+					;
+				}, 1000);
+			} else {
+				$(".reloadverify").click();
+				layer.msg(data.info, {icon: 2});
+				if (data.url) {
+					window.location = data.url;
+				}
+			}
+		}, "json");
+	}
+
+
+	function findpwd_up() {
+		
+		var real_verify = $("#real_verify").val();
+		var paypassword = $("#paypassword").val();
+
+		if (real_verify == "" || real_verify == null) {
+			layer.tips("{:l('PLEASE_ENTER_VERIFICATION_CODE')}", '#real_verify', {tips: 2});
+			return false;
+		}
+
+
+		if (paypassword == "" || paypassword == null) {
+			layer.tips("Please choose new fund password", '#paypassword', {tips: 2});
+			return false;
+		}
+		$.post("/Findpwd/findpwd", {
+			real_verify: real_verify,
+			paypassword: paypassword,
+			token: ""
+		}, function (data) {
+			if (data.status == 1) {
+				layer.msg(data.info, {icon: 1});
+				window.location = '/Findpwd/findpwdconfirm';
+				
+			} else {
+				layer.msg(data.info, {icon: 2});
+				if (data.url) {
+					window.location = data.url;
+				}
+			}
+		}, "json");
+	}
+</script>
+<include file="Public:footer" />
